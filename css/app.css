@@ -92,6 +92,7 @@ video{
 
 .btn-primary{
   padding: 10px 30px;
+  background-color: var(--main-bgColor);
   border-radius: 30px;
 }
 
