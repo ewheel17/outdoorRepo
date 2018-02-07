@@ -1,1 +1,44 @@
-Changing the file.
+body{
+
+}
+
+h1{
+  font-size: 90px;
+  margin-bottom: 30px;
+}
+
+.activity{
+  margin: 30px auto;
+}
+
+main{
+  background-color: #fff;
+}
+
+.navbar{
+  height: 100px;
+}
+
+.overlay{
+  background: rgba(0,0,0,0);
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+#myVideo{
+  position: relative;
+  min-width: 100%;
+  width: auto;
+  object-fit: cover !important;
+  margin-bottom: 50px;
+}
+
+.btn-primary{
+  padding: 10px 30px;
+  border-radius: 30px;
+}
