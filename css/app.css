@@ -8,7 +8,7 @@
   --main-fontFamily: 'Barlow', sans-serif;
   --main-bgColor: #a6cd8c;
   --secondary-bgColor: #84a470;
-  --dark-bgColor: #45535e;
+  --dark-bgColor: #484753;
 }
 
 
@@ -113,19 +113,25 @@ video{
   transition-duration: 0.3s;
 }
 
-.card:hover{
-  transition: all .2s ease-out;
-  transform: scale(1.03) translateY(5px);
-  margin-bottom: 20px;
+.card {
+  border: 1px solid #fff !important;
+  border-radius: 0px;
+  padding: 0;
+  opacity: 0.8;
 }
 
-.card-columns {
-  @include media-breakpoint-only(lg) {
-    column-count: 4;
-  }
-  @include media-breakpoint-only(xl) {
-    column-count: 5;
-  }
+.card:hover{
+  opacity: 1;
+  background-color: #fff;
+}
+
+.card-body{
+  padding: 0;
+}
+
+.card img{
+  width: 100%;
+  border-radius: 0px;
 }
 
 /*****************/
@@ -135,3 +141,21 @@ video{
 @media screen and (max-width: 768px) {
   .overlay h1 {
     font-size: 50px; }
+
+@media screen and (max-width: 699px) and (min-width: 520px) {
+  .card-columns{
+    column-count: 2;
+    column-gap: 1.25rem;
+  }
+
+@media screen and (max-width: 768px) and (min-width: 699px) {
+.card-columns{
+  column-count: 3;
+  column-gap: 1.25rem;
+}
+
+@media screen and (min-width: 768px) {
+.card-columns{
+  column-count: 4 !important;
+  column-gap: 1.25rem;
+}
