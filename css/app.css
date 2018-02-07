@@ -1,44 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:100,200,300,400,500,600,700');
+
+
+/*************/
+/* VARIABLES */
+/*************/
+:root{
+  --main-fontFamily: font-family:'Barlow', sans-serif;
+  --main-bgColor: #3d8b37;
+  --secondary-bgColor: #306f2c;
+}
+
+
+
+/*****************/
+/* PAGE SECTIONS */
+/*****************/
+
 body{
-
+  font-family: var(--main-fontFamily);
 }
 
-h1{
-  font-size: 90px;
-  margin-bottom: 30px;
-}
-
-.activity{
-  margin: 30px auto;
+header{
+  background-color: #000;
+  overflow: hidden;
 }
 
 main{
   background-color: #fff;
 }
 
-.navbar{
-  height: 100px;
+footer{
+
+}
+
+
+
+/********************/
+/* VIDEO PROPERTIES */
+/********************/
+
+.video-container{
+  position: relative;
+}
+
+video{
+  background-color: #000;
+  opacity: 0.5;
+  width: 100% !important;
+  height: auto;
+  vertical-align: middle;
+  object-fit: none;
 }
 
 .overlay{
-  background: rgba(0,0,0,0);
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  color: #fff;
 }
 
-#myVideo{
-  position: relative;
-  min-width: 100%;
-  width: auto;
-  object-fit: cover !important;
-  margin-bottom: 50px;
+.overlay h1{
+  font-size: 120px;
+  font-weight: 100;
+  color: rgba(255,255,255,0.7);
+  padding: 80px 200px;
 }
+
+
+
+/****************/
+/* MAIN CONTENT */
+/****************/
+.navbar{
+  background-color:var(--main-bgColor);
+  padding: 0;
+}
+
+.navbar li a{
+  margin: 0 40px;
+  padding: 10px;
+}
+
+.navbar li:hover{
+  background-color:var(--secondary-bgColor);
+}
+.activity{
+  margin: 30px auto;
+}
+
 
 .btn-primary{
   padding: 10px 30px;
   border-radius: 30px;
 }
+
+
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media screen and (max-width: 768px) {
+  .overlay h1 {
+    font-size: 50px; }
