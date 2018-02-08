@@ -45,6 +45,15 @@ h1{
   display: inline-block;
 }
 
+h2{
+  font-size: 18px;
+  font-weight: 700 !important;
+  color: #00;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
 h3{
   font-size: 18px;
   font-weight: 700 !important;
@@ -134,7 +143,6 @@ video{
 .card:hover{
   opacity: 1;
   background-color: #fff;
-
 }
 
 .card-body{
@@ -162,6 +170,35 @@ video{
   font-weight: 300;
   font-size: 20px;
   margin-bottom: 40px;
+}
+
+.login{
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.login .btn-primary, input{
+  margin: 20px 0;
+}
+
+.login input[type=password], input[type=email]{
+  border: 1px solid #54b5ff;
+  border-radius: 0;
+}
+
+.login h1{
+  margin: 0;
+  font-size: 60px;
+}
+
+.login-icon{
+  display: block;
+  color:#54b5ff;
+  font-size: 60px;
+  text-align: center !important;
 }
 
 /*****************/
