@@ -71,6 +71,12 @@ h3{
   position: relative;
 }
 
+.static-banner{
+  position: relative;
+  max-height: 100px;
+  width: 100%;
+}
+
 video{
   background-color: #000;
   opacity: 0.5;
@@ -200,6 +206,12 @@ video{
   font-size: 60px;
   text-align: center !important;
 }
+
+.flat-icon{
+  max-height: 150px;
+  margin: 30px auto;
+}
+
 
 /*****************/
 /* MEDIA QUERIES */
