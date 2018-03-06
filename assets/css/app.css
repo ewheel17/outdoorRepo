@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700');
 
 /*************/
 /* VARIABLES */
 /*************/
 :root{
-  --main-fontFamily: 'Roboto', sans-serif;
+  --main-fontFamily: 'Lato', sans-serif;
   --main-bgColor: #3ddb93;
   --secondary-bgColor: #36c584;
   --dark-bgColor: #fff;
@@ -39,19 +39,15 @@ footer{
 
 h1{
   font-size: 90px;
-  font-weight: 100 !important;
+  font-weight: 300 !important;
   color: var(--secondary-bgColor);
-  margin: 80px 30px 20px 0;
-  display: inline-block;
 }
 
 h2{
-  font-size: 18px;
-  font-weight: 700 !important;
-  color: #00;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin: 10px 0;
+  font-size: 60px;
+  font-weight: 300 !important;
+  color: var(--secondary-bgColor);
+  margin: 80px 30px 20px 0;
 }
 
 h3{
@@ -69,12 +65,6 @@ h3{
 
 .video-container{
   position: relative;
-}
-
-.static-banner{
-  position: relative;
-  max-height: 100px;
-  width: 100%;
 }
 
 video{
@@ -160,6 +150,44 @@ video{
   border-radius: 0px;
 }
 
+/*****************/
+/* LOGIN */
+/*****************/
+
+.login{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.login .btn-primary, input{
+  margin: 20px 0;
+}
+
+.login input[type=password], input[type=email]{
+  border: 1px solid #54b5ff;
+  border-radius: 0;
+}<div class="container">
+
+.login h1{
+  margin: 0;
+  font-size: 60px;
+}
+
+.login-icon{
+  display: block;
+  color:#54b5ff;
+  font-size: 60px;
+  text-align: center !important;
+}
+
+
+/*****************/
+/* LANDING */
+/*****************/
+
 .marketingPods{
   text-align: center;
   padding: 30px;
@@ -178,40 +206,30 @@ video{
   margin-bottom: 40px;
 }
 
-.login{
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.login .btn-primary, input{
-  margin: 20px 0;
-}
-
-.login input[type=password], input[type=email]{
-  border: 1px solid #54b5ff;
-  border-radius: 0;
-}
-
-.login h1{
-  margin: 0;
-  font-size: 60px;
-}
-
-.login-icon{
-  display: block;
-  color:#54b5ff;
-  font-size: 60px;
-  text-align: center !important;
-}
-
+/*****************/
+/* DASHBOARD */
+/*****************/
 .flat-icon{
   max-height: 150px;
-  margin: 30px auto;
+  margin-bottom: 30px;
 }
 
+.money{
+  background-color: var(--secondary-bgColor);
+  min-height: 300px;
+  width: 100%;
+}
+
+.money h1{
+  font-size: 50px;
+  color: #fff;
+  display: block;
+}
+
+.money p{
+  font-size: 80px;
+  color: #fff;
+}
 
 /*****************/
 /* MEDIA QUERIES */
