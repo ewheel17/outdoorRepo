@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700');
+@import 'theme_light.scss';
+
+/*************************************/
+/* PAGE SECTIONS & DEFAULT PROPERTIES*/
+/*************************************/
+
+body{
+  font-family: $font-family;
+  background-color: $w;
+  padding-top: 70px; /* offset fixed header */
+
+  h1{
+    font-size: 90px;
+    font-weight: 100 !important;
+    color: $sec-bgcolor;
+    margin: 80px 30px 20px 0;
+    display: inline-block;
+  }
+
+  h2{
+    font-size: 24px;
+    font-weight: 300 !important;
+    color: #000;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 30px 0;
+  }
+
+  h3{
+    font-size: 18px;
+    font-weight: 700 !important;
+    color: $sec-bgcolor;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 10px 0;
+  }
+
+  p{
+    font-weight: 300;
+    font-size: 20px;
+  }
+
+}
+
+header{
+  background-color: #000;
+  overflow: hidden;
+}
+
+main{
+  background-color: $w;
+}
+
+footer{
+  background-color: #5b5f66;
+  margin: 30px 0 0 0;
+  padding: 20px 0;
+}
+
+
+
+/********************/
+/* VIDEO PROPERTIES */
+/********************/
+
+.video-container{
+  position: relative;
+}
+
+.static-banner{
+  position: relative;
+  max-height: 100px;
+  width: 100%;
+}
+
+video{
+  background-color: #000;
+  opacity: 0.5;
+  width: 100% !important;
+  height: auto;
+  vertical-align: middle;
+  object-fit: none;
+}
+
+.overlay{
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.overlay h1{
+  font-size: 90px;
+  font-weight: 100;
+  color:rgba(61,219,147,0.7);
+  padding: 0px 30px;
+}
+
+
+
+/****************/
+/* MAIN CONTENT */
+/****************/
+.navbar{
+  padding: 0;
+  min-height: 80px;
+}
+
+.navbar li{
+  margin: 0 40px;
+  padding: 10px;
+}
+
+.btn-primary{
+  margin: 20px;
+  padding: 5px 30px;
+  background-color: $main-bgcolor;
+  border: 1px solid $main-bgcolor;
+  border-radius: 30px;
+}
+
+.btn-primary:hover{
+  background-color: $sec-bgcolor;
+  border: 1px solid $sec-bgcolor;
+  transition-duration: 0.2s;
+}
+
+.btn-default{
+  margin: 20px;
+  padding: 5px 30px;
+  border: 1px solid $w;
+  border-radius: 30px;
+}
+
+.btn-default:hover{
+  background-color: $third-bgcolor;
+  border: 1px solid $third-bgcolor;
+  transition-duration: 0.2s;
+}
+
+.marketingPods{
+  text-align: center;
+  padding: 50px;
+  background-color: #efefef;
+}
+
+.marketingPods .fa{
+  color: #5b5f66;
+  font-size: 100px;
+  margin: 40px 0 20px 0;
+}
+
+.who-are-we{
+  padding: 50px;
+}
+
+.login{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.login .btn-primary, input{
+  margin: 20px 0;
+}
+
+.login input[type=password], input[type=email]{
+  border: 1px solid $login-maincolor;
+  border-radius: 0;
+}
+
+.login h1{
+  margin: 0;
+  font-size: 60px;
+}
+
+.login-icon{
+  display: block;
+  color: $login-maincolor;
+  font-size: 60px;
+  text-align: center !important;
+}
+
+.flat-icon{
+  max-height: 150px;
+  margin: 30px auto;
+}
+
+.donations{
+  background-color: $main-bgcolor;
+  padding: 50px;
+  color: $w;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.products{
+  background-color: $third-bgcolor;
+  padding: 50px;
+  color: $w;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.product-box{
+  height: 200px;
+  width: 200px;
+  background-color: $w;
+  color: #000;
+}
+
+.welcome{
+  font-size: 32px;
+}
+
+.disclaimer {
+  font-size: 16px !important;
+}
+
+.contact-form{
+  padding: 30px;
+}
+
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
