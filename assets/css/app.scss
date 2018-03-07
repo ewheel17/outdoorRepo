@@ -54,7 +54,6 @@ main{
 
 footer{
   background-color: #5b5f66;
-  margin: 30px 0 0 0;
   padding: 20px 0;
 }
 
@@ -103,6 +102,11 @@ video{
 /****************/
 /* MAIN CONTENT */
 /****************/
+
+.container-fluid{
+  padding-left: 0;
+  padding-right: 0;
+}
 .navbar{
   padding: 0;
   min-height: 80px;
