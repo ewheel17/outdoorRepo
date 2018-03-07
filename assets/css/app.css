@@ -10,8 +10,6 @@
   --dark-bgColor: #fff;
 }
 
-
-
 /*************************************/
 /* PAGE SECTIONS & DEFAULT PROPERTIES*/
 /*************************************/
@@ -63,7 +61,6 @@ h3{
   margin: 10px 0;
 }
 
-
 p{
   font-weight: 300;
   font-size: 20px;
@@ -76,7 +73,6 @@ p{
 .video-container{
   position: relative;
 }
-
 
 .static-banner{
   position: relative;
@@ -122,7 +118,6 @@ video{
 .navbar li{
   margin: 0 40px;
   padding: 10px;
-  border-bottom: 4px solid transparent;
 }
 
 .btn-primary{
@@ -138,7 +133,6 @@ video{
   border: 1px solid var(--secondary-bgColor);
   transition-duration: 0.2s;
 }
-
 
 .btn-default{
   margin: 20px;
@@ -165,39 +159,9 @@ video{
   margin: 40px 0 20px 0;
 }
 
-
 .who-are-we{
   padding: 50px;
 }
-
-.card {
-  border-bottom: 6px solid var(--secondary-bgColor);
-  border-top:0;
-  border-right:0;
-  border-left:0;
-  border-radius: 0px;
-  padding: 0;
-  opacity: 0.8;
-}
-
-.card:hover{
-  opacity: 1;
-  background-color: #fff;
-}
-
-.card-body{
-  padding: 0;
-}
-
-.card img{
-  width: 100%;
-  border-radius: 0px;
-}
-
-/*****************/
-/* LOGIN */
-/*****************/
-
 
 .login{
   margin-top: 20px;
@@ -268,54 +232,9 @@ video{
   font-size: 16px !important;
 }
 
-
-/*****************/
-/* LANDING */
-/*****************/
-
-.marketingPods{
-  text-align: center;
+.contact-form{
   padding: 30px;
-  background-color: #efefef;
 }
-
-.marketingPods .fa{
-  color: #5b5f66;
-  font-size: 100px;
-  margin: 40px 0 20px 0;
-}
-
-.marketingPods p{
-  font-weight: 300;
-  font-size: 20px;
-  margin-bottom: 40px;
-}
-
-/*****************/
-/* DASHBOARD */
-/*****************/
-.flat-icon{
-  max-height: 150px;
-  margin-bottom: 30px;
-}
-
-.money{
-  background-color: var(--secondary-bgColor);
-  min-height: 300px;
-  width: 100%;
-}
-
-.money h1{
-  font-size: 50px;
-  color: #fff;
-  display: block;
-}
-
-.money p{
-  font-size: 80px;
-  color: #fff;
-}
-
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
