@@ -39,15 +39,19 @@ footer{
 
 h1{
   font-size: 90px;
-  font-weight: 300 !important;
+  font-weight: 100 !important;
   color: var(--secondary-bgColor);
+  margin: 80px 30px 20px 0;
+  display: inline-block;
 }
 
 h2{
-  font-size: 60px;
+  font-size: 24px;
   font-weight: 300 !important;
-  color: var(--secondary-bgColor);
-  margin: 80px 30px 20px 0;
+  color: #00;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 30px 0;
 }
 
 h3{
@@ -59,12 +63,25 @@ h3{
   margin: 10px 0;
 }
 
+
+p{
+  font-weight: 300;
+  font-size: 20px;
+}
+
 /********************/
 /* VIDEO PROPERTIES */
 /********************/
 
 .video-container{
   position: relative;
+}
+
+
+.static-banner{
+  position: relative;
+  max-height: 100px;
+  width: 100%;
 }
 
 video{
@@ -108,10 +125,6 @@ video{
   border-bottom: 4px solid transparent;
 }
 
-.navbar li:hover{
-  border-bottom: 4px solid var(--secondary-bgColor);
-}
-
 .btn-primary{
   margin: 20px;
   padding: 5px 30px;
@@ -124,6 +137,37 @@ video{
   background-color: var(--secondary-bgColor);
   border: 1px solid var(--secondary-bgColor);
   transition-duration: 0.2s;
+}
+
+
+.btn-default{
+  margin: 20px;
+  padding: 5px 30px;
+  border: 1px solid #fff;
+  border-radius: 30px;
+}
+
+.btn-default:hover{
+  background-color: #eee;
+  border: 1px solid #eee;
+  transition-duration: 0.2s;
+}
+
+.marketingPods{
+  text-align: center;
+  padding: 50px;
+  background-color: #efefef;
+}
+
+.marketingPods .fa{
+  color: #5b5f66;
+  font-size: 100px;
+  margin: 40px 0 20px 0;
+}
+
+
+.who-are-we{
+  padding: 50px;
 }
 
 .card {
@@ -154,6 +198,7 @@ video{
 /* LOGIN */
 /*****************/
 
+
 .login{
   margin-top: 20px;
   display: flex;
@@ -169,7 +214,7 @@ video{
 .login input[type=password], input[type=email]{
   border: 1px solid #54b5ff;
   border-radius: 0;
-}<div class="container">
+}
 
 .login h1{
   margin: 0;
@@ -181,6 +226,46 @@ video{
   color:#54b5ff;
   font-size: 60px;
   text-align: center !important;
+}
+
+.flat-icon{
+  max-height: 150px;
+  margin: 30px auto;
+}
+
+.donations{
+  background-color: var(--main-bgColor);
+  padding: 50px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.products{
+  background-color: #999;
+  padding: 50px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.product-box{
+  height: 200px;
+  width: 200px;
+  background-color: #fff;
+  color: #000;
+}
+
+.welcome{
+  font-size: 32px;
+}
+
+.disclaimer {
+  font-size: 16px !important;
 }
 
 
