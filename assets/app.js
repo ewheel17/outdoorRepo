@@ -1,3 +1,4 @@
+//First-time Modal
 $(document).ready(function() {
     var firstTime = localStorage.getItem('firstTime');
     if (firstTime== null) {
@@ -6,3 +7,5 @@ $(document).ready(function() {
         $('#welcome-modal').modal('show');
     }
 });
+
+//Product Lines

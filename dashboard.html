@@ -20,37 +20,34 @@
   <header>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top justify-content-between">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#cycling">Outdoor Sports</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#snowsports">Home DIY</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#hiking">Beauty Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#amping">Tech</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Support</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">User Profile</a>
-              <a class="dropdown-item" href="#">Settings</a>
-            </div>
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#cycling" id="cycling-btn">Cycling</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#snowsports" id="snow-btn">Snow Sports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#hiking" id="hiking-btn">Hiking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#amping" id="camping-btn">Camping</a>
+          </li>
+        </ul>
 
-    </div>
-    <a type="navbar-nav button" class="btn btn-primary" href="#">Logout</a>
+      </div>
+      <li class="navbar-nav button dropdown ">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
+        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">User Profile</a>
+          <a class="dropdown-item" href="#">Settings</a>
+        </div>
+      </li>
+      <a type="navbar-nav button" class="btn btn-primary" href="#">Logout</a>
     </nav>
   </header>
 
@@ -59,10 +56,10 @@
       <div class="donations">
         <div class="row">
           <div class="col">
-          <p><span class="welcome">Welcome, {name}.</span></p>
-          <p>So far, you have generated <strong>${dollars}</strong> for charity! Kudos!</p>
-          <p>But don't forget to stuff your cookie jar so you can keep on donating.</p>
-        </div>
+            <p><span class="welcome">Welcome, {name}.</span></p>
+            <p>So far, you have generated <strong>${dollars}</strong> for charity! Kudos!</p>
+            <p>But don't forget to stuff your cookie jar so you can keep on donating.</p>
+          </div>
         </div>
         <div class="row">
           <button id="cookie-stuff" class="btn btn-default" type="button">give me all the cookies</button>
@@ -70,8 +67,11 @@
       </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="products">
+
+    <!-- Product Divs -->
+
+    <div id="your-products" class="products">
+      <div class="container-fluid">
         <div class="row">
           <div class="col">
             <h2>Products For You</h2>
@@ -104,11 +104,11 @@
 
 
     <div class="container-fluid">
-      <div class="marketingPods">
+      <div class="your-charity">
         <div class="row">
           <div class="col">
-          <h2>Who are you're currently donating to:</h2>
-        </div>
+            <h2>Who you're currently donating to</h2>
+          </div>
         </div>
         <div class="row">
 
@@ -125,6 +125,8 @@
         </div>
       </div>
     </div>
+
+
   </main>
 
   <footer class="container-fluid">
@@ -148,7 +150,7 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="assets/app.js"></script>

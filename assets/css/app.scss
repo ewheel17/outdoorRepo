@@ -110,11 +110,11 @@ video{
 .navbar{
   padding: 0;
   min-height: 80px;
-}
 
-.navbar li{
-  margin: 0 40px;
-  padding: 10px;
+  li{
+    margin: 0 40px;
+    padding: 10px;
+  }
 }
 
 .btn-primary{
@@ -148,12 +148,19 @@ video{
   text-align: center;
   padding: 50px;
   background-color: #efefef;
+
+  .fa{
+    color: #5b5f66;
+    font-size: 100px;
+    margin: 40px 0 20px 0;
+  }
+
 }
 
-.marketingPods .fa{
-  color: #5b5f66;
-  font-size: 100px;
-  margin: 40px 0 20px 0;
+.your-charity{
+  text-align: center;
+  padding: 50px;
+  background-color: $w;
 }
 
 .who-are-we{
@@ -166,10 +173,11 @@ video{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
 
-.login .btn-primary, input{
-  margin: 20px 0;
+  .btn-primary{
+    margin: 20px 0;
+  }
+
 }
 
 .login input[type=password], input[type=email]{
@@ -231,6 +239,11 @@ video{
 
 .contact-form{
   padding: 30px;
+}
+
+.product-line{
+  min-height: 400px;
+  display: none;
 }
 
 
