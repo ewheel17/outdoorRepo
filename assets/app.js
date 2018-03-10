@@ -4,8 +4,7 @@ $(document).ready(function() {
     if (firstTime== null) {
         localStorage.setItem('firstTime', 1);
 
-        $('#welcome-modal').modal('show');
+        UIkit.modal("#welcome-modal").show();
+
     }
 });
-
-//Product Lines

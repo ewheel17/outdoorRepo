@@ -7,8 +7,6 @@
 
 body{
   font-family: $font-family;
-  background-color: $w;
-  padding-top: 70px; /* offset fixed header */
 
   h1{
     font-size: 90px;
@@ -46,15 +44,6 @@ body{
 header{
   background-color: #000;
   overflow: hidden;
-}
-
-main{
-  background-color: $w;
-}
-
-footer{
-  background-color: #5b5f66;
-  padding: 20px 0;
 }
 
 
@@ -115,46 +104,6 @@ video{
     margin: 0 40px;
     padding: 10px;
   }
-}
-
-.btn-primary{
-  margin: 20px;
-  padding: 5px 30px;
-  background-color: $main-bgcolor;
-  border: 1px solid $main-bgcolor;
-  border-radius: 30px;
-}
-
-.btn-primary:hover{
-  background-color: $sec-bgcolor;
-  border: 1px solid $sec-bgcolor;
-  transition-duration: 0.2s;
-}
-
-.btn-default{
-  margin: 20px;
-  padding: 5px 30px;
-  border: 1px solid $w;
-  border-radius: 30px;
-}
-
-.btn-default:hover{
-  background-color: $third-bgcolor;
-  border: 1px solid $third-bgcolor;
-  transition-duration: 0.2s;
-}
-
-.marketingPods{
-  text-align: center;
-  padding: 50px;
-  background-color: #efefef;
-
-  .fa{
-    color: #5b5f66;
-    font-size: 100px;
-    margin: 40px 0 20px 0;
-  }
-
 }
 
 .your-charity{
@@ -237,16 +186,21 @@ video{
   font-size: 16px !important;
 }
 
-.contact-form{
-  padding: 30px;
-}
-
 .product-line{
   min-height: 400px;
   display: none;
 }
 
+.uk-card{
+  i{
+    font-size: 100px;
+    color: darken($third-bgcolor, 20%);
+  }
+}
 
+footer{
+  background-color: #eee;
+}
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
