@@ -23,6 +23,7 @@
 <body>
 
   <header>
+  <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
     <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-right">
           <div class="uk-navbar-item">
@@ -30,10 +31,11 @@
           </div>
         </div>
     </nav>
+  </div>
+
 
   <!-- Video -->
-    <div class="container-fluid">
-      <div class="row video-container">
+  <div class="uk-container">
         <video autoplay muted loop id="myVideo">
             <source src="assets/videos/background.mp4" type="video/mp4">
         </video>
@@ -41,7 +43,6 @@
           <h1 id="hello"></h1>
         </div>
       </div>
-    </div>
   </header>
 
   <main class="uk-container uk-container-large uk-margin-large-top">
