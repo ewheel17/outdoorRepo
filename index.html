@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>outdoorRepo</title>
+
+
+  <!-- Custom styles for this template -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" /
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="http://classic.avantlink.com/affiliate_app_confirm.php?mode=js&authResponse=d4270748e825e869ba441d1ff08433eaeef5b6cf"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
+</head>
+
+<body>
+
+  <header>
+  <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-right">
+          <div class="uk-navbar-item">
+            <a class="uk-button uk-button-primary" href="login.html">Login</a>
+          </div>
+        </div>
+    </nav>
+  </div>
+
+
+  <!-- Video -->
+  <div class="uk-container video-container">
+        <video autoplay muted loop id="myVideo">
+            <source src="assets/videos/background.mp4" type="video/mp4">
+        </video>
+        <div class="overlay">
+          <h1 id="hello"></h1>
+        </div>
+      </div>
+  </header>
+
+  <main class="uk-container uk-container-large uk-margin-large-top">
+    <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+      <div>
+          <div class="uk-card uk-card-default uk-card-body">
+            <i class="fa fa-credit-card" aria-hidden="true"></i>
+            <h3>biggest donor</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+          </div>
+      </div>
+      <div>
+          <div class="uk-card uk-card-default uk-card-body">
+            <i class="fa fa-globe" aria-hidden="true"></i>
+            <h3>most popular</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+          </div>
+      </div>
+      <div>
+          <div class="uk-card uk-card-default uk-card-body">
+            <i class="fa fa-check-square-o" aria-hidden="true"></i>
+            <h3>newest charity</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+          </div>
+      </div>
+</div>
+
+  <div class="uk-grid-divider uk-child-width-expand@s uk-padding-large" uk-grid>
+      <div>
+        <h5 class="card-title">Who Are We?</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+
+      <div>
+        <h5 class="card-title">What Do We Do?</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+  </div>
+
+
+    <div>
+      <h1>Our Charities</h1>
+
+      <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
+          <div>
+              <div class="uk-background-muted uk-padding">
+                <img class="flat-icon" src="assets/images/001-handicap.png">
+                <h3>Charity #1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+              </div>
+          </div>
+          <div>
+              <div class="uk-background-primary uk-padding uk-light">
+                <img class="flat-icon" src="assets/images/002-charity.png">
+                <h3>Charity #2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+              </div>
+          </div>
+          <div>
+              <div class="uk-background-muted uk-padding">
+                <img class="flat-icon" src="assets/images/003-hands.png">
+                <h3>Charity #3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+              </div>
+          </div>
+      </div>
+
+          <h1>Questions?</h1>
+          <form class="uk-margin">
+            <fieldset class="uk-fieldset">
+            <div class="uk-margin">
+              <input type="text" class="uk-input" id="name" placeholder="What's your name?">
+            </div>
+            <div class="uk-margin">
+              <input type="email" class="uk-input" id="email" placeholder="Email address">
+            </div>
+            <div class="uk-margin">
+              <textarea class="uk-textarea" id="message" rows="5" placeholder="What can we help with?"></textarea>
+            </div>
+            <button class="uk-button uk-button-default">Submit</button>
+          </fieldset>
+          </form>
+
+  </main>
+
+  <footer>
+
+    <nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-center">
+            <ul class="uk-navbar-nav">
+                <li><a href="">Copyright &copy; 2018-2019 | outdoorRepo</a></li>
+                <li><a href="">Terms</a></li>
+                <li><a href="">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+  </footer>
+
+  <!-- Initial Modal -->
+
+  <div id="welcome-modal" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+          <p>Hey! It looks like it's your first time visiting us.</p>
+          <p>We're excited that you've dropped by, poke around a little and let us know if you have any questions!</p>
+           <button class="uk-modal-close-default" type="button" uk-close></button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
+  <script src="assets/app.js"></script>
+
+
+
+  <!--typeItJS Scripts -->
+  <script>
+    var instance = new TypeIt('#hello', {})
+      .type('save easily.')
+      .pause(800)
+      .break()
+      .type('spend responsibly.')
+      .pause(800)
+      .break()
+      .type('buy smart.')
+      .pause(800)
+      .delete(6)
+      .type('<strong>outdoorRepo... :)</strong>');
+  </script>
+</body>
+
+</html>
