@@ -38,7 +38,8 @@ header {
 /********************/
 .video-container {
   position: relative;
-  height:450px; }
+  min-height:400px;
+  max-height:450px; }
 
 .static-banner {
   position: relative;
