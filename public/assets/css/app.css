@@ -229,6 +229,10 @@ video {
   min-height: 400px;
   display: none; }
 
+.charity {
+  min-height: 525px;
+}
+
 .uk-card i {
   font-size: 100px;
   color: #bbbbbb; }
