@@ -185,6 +185,53 @@
   </div>
 
 
+
+  <!--Account Setup Modal -->
+    <div id="setup-modal" class="uk-flex-top" uk-modal>
+
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+          <div id="setup-modal-text">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+
+          <form>
+          <h2>It looks like you just logged in for the first time. Congrats!</h2>
+            <p>We'd like to help you get your user dashboard set up!</p>
+
+            <h3> What should we call you? <h3>
+            <input class="uk-input" id="preferred-name">
+
+            <h3> Do you prefer a light theme or a dark theme? </h3>
+            <div class="uk-form-controls uk-form-controls-text">
+            <p><input class="uk-radio" type="radio" name="theme" id="light-theme"> I enjoy the light</p>
+            <p><input class="uk-radio" type="radio" name="theme" id="dark-theme"> I'm more of a dark-theme person</p>
+          </div>
+
+            <div class="uk-grid-small" uik-grid>
+            <h3>What do you like to buy?</h3>
+            <div class="uk-width-1-4@s">
+            <p> <input class="uk-checkbox" value="Things1" id="things1" type="checkbox"> Things 1</p>
+          </div>
+          <div class="uk-width-1-4@s">
+          <p> <input class="uk-checkbox" value="Things2" id="things2" type="checkbox"> Things 2</p>
+        </div>
+        <div class="uk-width-1-4@s">
+        <p> <input class="uk-checkbox" value="Things3" id="things3" type="checkbox"> Things 3</p>
+      </div>
+      <div class="uk-width-1-4@s">
+      <p> <input class="uk-checkbox" value="Things4" id="things4" type="checkbox"> Things 4</p>
+    </div>
+            </div>
+
+            <h3>Which charity would you like to contribute to?</h3>
+            <p><input class="uk-radio" value="Charity1" name="charity" type="radio" id="charity1"> Charity1</p>
+            <p><input class="uk-radio" value="Charity2" name="charity" type="radio" id="charity2"> Charity2</p>
+            <p><input class="uk-radio" value="Charity3" name="charity" type="radio" id="charity3"> Charity3</p>
+            <a type="button" class="uk-button uk-button-default" id="finished-setup" uk-toggle>Submit</a>
+        </div>
+      </div>
+    </div>
+
+
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -192,21 +239,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
   <script src="assets/app.js"></script>
-
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/5aab337fd7591465c7089c8f/default';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
-  <!--End of Tawk.to Script-->
-
+  
 </body>
 
 </html>
