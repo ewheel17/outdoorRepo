@@ -165,3 +165,31 @@ $(document).ready(function() {
         var modal = UIkit.modal('#setup-modal');
         modal.hide();
       });
+
+// Log Database Values to Settings Page
+
+// var preferredName;
+// var themeChoice;
+// var charityChoice;
+// var thingChoice;
+//
+//
+// database.ref('users/' + userId).on("child_added", function (childSnapshot) {
+//
+//   trainName = childSnapshot.val().trainName;
+//   trainDestination = childSnapshot.val().trainDestination;
+//   trainFrequency = childSnapshot.val().trainFrequency;
+//   firstTrain = childSnapshot.val().firstTrain;
+//   difference = moment().diff(moment.unix(firstTrain), "minutes");
+//   timeLeft = moment().diff(moment.unix(firstTrain), 'minutes') % trainFrequency;
+//   mins = moment(trainFrequency - timeLeft, "mm").format('mm');
+//   nextTrain = moment().add(mins, "m").format("hh:mm A");
+//
+//
+// $("#train-times").append("<tr><td>" + childSnapshot.val().trainName + "</td><td>" + childSnapshot.val().trainDestination +
+// "</td><td>" + childSnapshot.val().trainFrequency + " minutes</td><td>" + nextTrain + "</td><td>" + mins + " minutes</td></tr>");
+//
+// //Log errors to the console
+// }, function(errorObject) {
+//   console.log("The read failed: " + errorObject.code);
+// });

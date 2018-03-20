@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>outdoorRepo</title>
+
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+      <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-right">
+
+          <div class="uk-navbar-item">
+            Cycling
+          </div>
+
+          <div class="uk-navbar-item">
+            Snow Sports
+          </div>
+          <div class="uk-navbar-item">
+            Hiking
+          </div>
+          <div class="uk-navbar-item">
+            Camping
+          </div>
+          <div class="uk-navbar-item">
+            My Account
+          </div>
+          <div class="uk-navbar-item">
+            <a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Tell a Friend</a>
+          </div>
+          <div class="uk-navbar-item">
+            <a class="uk-button uk-button-primary" href="index.html">Logout</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+
+  </header>
+
+  <main class="uk-container uk-container-large uk-margin-large-top">
+
+  <h1> Settings </h1>
+
+<div class="uk-container">
+  <h3> Preferred Name </h3>
+    <div id="preferred-name-setting"></div>
+
+
+  <h3> Email Address </h3>
+      <div id="email-setting"></div>
+  <h3> Purchase Preferences </h3>
+  <div id="purchase-setting"></div>
+
+  <h3> Theme </h3>
+<div id="theme-setting"></div>
+
+  <h3> Charity Choice </h3>
+  <div id="charity-setting"></div>
+
+</div>
+
+  </main>
+
+
+
+
+  <footer>
+
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+      <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-right">
+
+          <div class="uk-navbar-item">
+            Copyright &copy; 2018-2019 | outdoorRepo
+          </div>
+
+          <div class="uk-navbar-item">
+            Terms
+          </div>
+          <div class="uk-navbar-item">
+            Support
+          </div>
+
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+
+
+
+  <!-- Refer a Friend Modal -->
+  <div id="modal-center" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+
+      <form action="">
+        <!-- Put where we want the data to be sent in action -->
+        <fieldset class="uk-fieldset">
+
+          <legend class="uk-legend">
+            <u>Tell A Friend</u>
+          </legend>
+
+          <div class="uk-margin">
+            <label for="friendMail">Friend's Name</label>
+            <input class="uk-input" id="friendMail" type="text" placeholder="Friend's Name Here...">
+          </div>
+
+          <div class="uk-margin">
+            <label for="friendMessage">Optional Message</label>
+            <textarea class="uk-textarea" id="friendMessage" rows="5" placeholder="Optional Message Here..."></textarea>
+          </div>
+
+          <button class="uk-button uk-button-primary" type="submit">Send</button>
+
+        </fieldset>
+      </form>
+
+    </div>
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
+  <script src="assets/app.js"></script>
+
+</body>
+
+</html>
