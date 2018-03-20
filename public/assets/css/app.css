@@ -76,7 +76,8 @@ video {
   font-size: 90px;
   font-weight: 100;
   color: rgba(61, 219, 147, 0.7);
-  padding: 0px 30px; }
+  padding: 0px 30px;
+  text-align: left !important; }
 
 /****************/
 /* MAIN CONTENT */
@@ -255,8 +256,10 @@ footer nav{
 }
 
 .introduction{
-  margin-top: 50px;
   margin-bottom: 50px;
+  background-color: #eee;
+  padding: 40px;
+  min-height: 100px;
 }
 
 /*****************/
