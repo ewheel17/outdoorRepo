@@ -97,16 +97,18 @@ if (pathname === "/dashboard.html") {
 
 //Setup modal
 //Only show setup on first login
+//
+//   var firstSetup = localStorage.getItem('firstSetup');
+//   if (firstSetup == null) {
+//     localStorage.setItem('firstSetup', 1);
+//
+//   };
+// });
+
 $(document).ready(function() {
-  var firstSetup = localStorage.getItem('firstSetup');
-  if (firstSetup == null) {
-    localStorage.setItem('firstSetup', 1);
-    var modal = UIkit.modal('#setup-modal');
-    modal.show();
-  };
-});
-
-
+  var modal = UIkit.modal('#setup-modal');
+      modal.show();
+    });
 
       //Log info to database on submit
       $("#finished-setup").on("click", function(event) {
@@ -152,7 +154,7 @@ $(document).ready(function() {
 
 
         // Save new value to Firebase
-        var userProfile = database.ref('users/' + userId).push({
+        var userProfile = database.ref('users/' + userId).set({
           userName: userName,
           preferredName: preferredName,
           themeChoice: theme,
