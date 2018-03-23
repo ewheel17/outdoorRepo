@@ -92,28 +92,8 @@ if (pathname === "/dashboard.html") {
 }
 
 
-//Setup modal
-//Only show setup on first login
-//
-//   var firstSetup = localStorage.getItem('firstSetup');
-//   if (firstSetup == null) {
-//     localStorage.setItem('firstSetup', 1);
-//
-//   };
-// });
-
-
+function setUpDash(){
 //Launch Set Up on Dash Login
-$(document).ready(function() {
-  var firstTime = localStorage.getItem('firstTime');
-  if (firstTime == null) {
-    localStorage.setItem('firstTime', 1);
-
-    $('#welcome-modal').modal('show');
-  }
-});
-
-
 $(document).ready(function() {
       var modal = UIkit.modal('#setup-modal');
           modal.show();
@@ -162,8 +142,6 @@ $("#finished-setup").on("click", function(event) {
     charity = "Ocean";
   };
 
-  var firstTime = false;
-
   // Save new value to Firebase
   var userProfile = database.ref('users/' + userId).set({
     userName: userName,
@@ -171,7 +149,6 @@ $("#finished-setup").on("click", function(event) {
     themeChoice: theme,
     charityChoice: charity,
     sportChoice: sports,
-    firstTime: firstTime
   });
 
   getUserProfile();
@@ -179,7 +156,7 @@ $("#finished-setup").on("click", function(event) {
     modal.hide();
 
 });
-
+}
 
 
 //Extract from Firebase and Display in DOM
@@ -212,7 +189,7 @@ function getUserProfile(){
 
   firebase.database().ref('/users/' + userId + '/preferredName/').once('value').then(function(snapshot){
     preferredName = (snapshot.val());
-    $("#welcome").append("<span class='welcome'>Welcome,  " + preferredName + "!</span>");
+    $("#welcome").append("Welcome,  " + preferredName + "!");
   });
 
   firebase.database().ref('/users/' + userId + '/themeChoice/').once('value').then(function(snapshot){
@@ -227,7 +204,6 @@ function getUserProfile(){
 
 
 function userSettings(){
-
   var userId = firebase.auth().currentUser.uid;
   firebase.database().ref('/users/' + userId + '/charityChoice/').once('value').then(function(snapshot){
     chosenCharity = (snapshot.val());

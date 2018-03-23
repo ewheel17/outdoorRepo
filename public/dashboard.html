@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css">
 
 
-  <body onload="getUserProfile()">
+  <body onload="setUpDash()">
     <header>
       <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
         <nav class="uk-navbar-container" uk-navbar>
@@ -33,7 +33,7 @@
           </div>
           <div class="uk-navbar-right">
             <div class="uk-navbar-item">
-              <a class="uk-button uk-button-default" href="settings.html">My Account </a>
+              <a class="uk-button uk-button-default" href="settings.html" id="user-settings">My Account </a>
             </div>
             <div class="uk-navbar-item">
               <a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Tell a Friend</a>
