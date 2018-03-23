@@ -47,6 +47,16 @@ footer nav{
   margin-bottom: 50px;
 }
 
+.section-three a:hover {
+  text-decoration: none;
+}
+
+.section-three h3:hover {
+  color: #3ddb93 !important;
+  transition-duration: 0.3s;
+}
+
+
 .section-four {
   padding: 80px 100px !important;
   background-color: #fff;
@@ -69,7 +79,7 @@ hr{
 }
 .section-five {
   background-color: #3ddb93;
-  padding: 100px 50px !important;
+  padding: 100px 50px 10px 50px !important;
 
 }
 
@@ -83,8 +93,12 @@ hr{
   margin-top: -20px;
 }
 
+.section-five img{
+  max-height: 200px;
+}
+
 .bottom-nav{
-  padding: 10px;
+  padding: 30px;
   font-size: 12px;
 }
 
@@ -100,6 +114,12 @@ hr{
 
 .bottom-nav a{
   color: #999;
+}
+
+.bottom-nav a:hover{
+  text-decoration: none;
+  color: #3ddb93;
+  transition-duration: 0.3s;
 }
 
 .your-charity {

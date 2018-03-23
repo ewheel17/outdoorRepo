@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="icon" href="assets/images/logo.png" type="image/gif" sizes="16x16">
 
   <title>outdoorRepo</title>
 
@@ -61,7 +62,7 @@
         </div>
       </div>
 
-      <div class="uk-child-width-expand@s uk-text-center uk-margin-remove uk-grid-large section-two" uk-grid>
+      <div uk-parallax="opacity: 0,1; viewport: 0.5;" class="uk-child-width-expand@s uk-text-center uk-margin-remove uk-grid-large section-two" uk-grid>
         <div>
           <img src="assets/images/006-piggy-bank.png" alt="skiing graphic" />
         </div>
@@ -79,7 +80,7 @@
 
 
 
-    <div class="uk-text-center section-three">
+    <div uk-parallax="opacity: 0,1; viewport: 0.5;" class="uk-text-center section-three">
         <h1>Helping Communites. One at a Time.</h1>
         <h3>...well, three at a time :)</h3>
       <p>
@@ -114,33 +115,33 @@
 
 
     <hr />
-    <div class="section-four uk-text-center">
+    <div uk-parallax="opacity: 0,1; viewport: 0.5;" class="section-four uk-text-center">
       <h1>Getting Involved.</h1>
       <div  uk-grid>
       <div class="uk-width-1-5">
-        <img class="uk-padding-remove-bottom" src="assets/images/001-bicycle.png" />
+        <img class="uk-padding-remove-bottom" src="assets/images/001-bicycle.png" uk-tooltip="title: You could cycle.; pos: top; offset: -30;" />
         <h4 class="uk-text-center">Cycling</h4>
       </div>
       <div class="uk-width-1-5">
-        <img class="uk-padding-remove-bottom" src="assets/images/002-charity.png" />
+        <img class="uk-padding-remove-bottom" src="assets/images/002-charity.png" uk-tooltip="title: Just send a donation.; pos: top; offset: -30;" />
         <h4 class="uk-text-center">Donating</h4>
       </div>
       <div class="uk-width-1-5">
-        <img class="uk-padding-remove-bottom" src="assets/images/003-hands.png" />
+        <img class="uk-padding-remove-bottom" src="assets/images/003-hands.png" uk-tooltip="title: Volunteer your time.; pos: top; offset: -30;" />
         <h4 class="uk-text-center">Volunteering</h4>
       </div>
       <div class="uk-width-1-5">
-        <img class="uk-padding-remove-bottom" src="assets/images/004-mountain.png" />
+        <img class="uk-padding-remove-bottom" src="assets/images/004-mountain.png" uk-tooltip="title: Hiking is cool too.; pos: top; offset: -30;"  />
         <h4 class="uk-text-center">Mountaineering</h4>
       </div>
       <div class="uk-width-1-5">
-        <img class="uk-padding-remove-bottom" src="assets/images/005-hiking.png" />
+        <img class="uk-padding-remove-bottom" src="assets/images/005-hiking.png" uk-tooltip="title: Rock climb to donate!; pos: top; offset: -30;"  />
         <h4 class="uk-text-center">Climbing</h4>
       </div>
     </div>
   </div>
 
-  <div class="uk-text-center section-five">
+  <div uk-parallax="opacity: 0,1; viewport: 0.5;" class="uk-text-center section-five">
     <h1>Need to know more?</h1>
     <h3>Just let us know how we can help and a friendly(ish) team-member will get back to you.</h3>
     <form class="uk-padding-large">
@@ -157,6 +158,7 @@
         <button class="uk-button uk-button-primary">Submit</button>
       </fieldset>
     </form>
+    <img src="assets/images/logo.png" alt="outdoorrepo logo" />
   </div>
 
   </main>
@@ -165,9 +167,6 @@
 
   <div class="bottom-nav uk-text-center uk-margin-remove">
         <ul>
-          <li>
-            <a href="">Copyright &copy; 2018-2019 | outdoorRepo</a>
-          </li>
           <li>
             <a href="">Terms</a>
           </li>
@@ -179,6 +178,9 @@
             <a href="#faq-modal" uk-toggle>FAQs</a>
           </li>
         </ul>
+        <p>
+            Copyright &copy; 2018-2019 | outdoorRepo
+        </p>
       </div>
 
 
@@ -199,7 +201,7 @@
   <div id="faq-modal" class="uk-flex-top" uk-modal>
     <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
 
-      <button class="uk-modal-close-outside" type="button" uk-close></button>
+      <button class="uk-modal-close-inside" type="button" uk-close></button>
 
       <ul uk-accordion>
         <li class="uk-open">
