@@ -85,9 +85,6 @@ if (pathname === "/dashboard.html") {
   firebase.auth().onAuthStateChanged(function(user) {
     console.log('authStateChanged', user);
     if (user) {
-      var firstName = user.displayName.split(' ').splice(0, 1);
-      console.log(firstName);
-      $("#welcome").append("<span class='welcome'>Welcome,  " + firstName + "!</span>");
     } else {
       window.location.replace("../index.html");
     }
@@ -105,91 +102,160 @@ if (pathname === "/dashboard.html") {
 //   };
 // });
 
+
+//Launch Set Up on Dash Login
 $(document).ready(function() {
+  var firstTime = localStorage.getItem('firstTime');
+  if (firstTime == null) {
+    localStorage.setItem('firstTime', 1);
+
+    $('#welcome-modal').modal('show');
+  }
+});
+
+
+$(document).ready(function() {
+      var modal = UIkit.modal('#setup-modal');
+          modal.show();
+});
+
+//Log info to database on submit
+$("#finished-setup").on("click", function(event) {
+  event.preventDefault();
+  userName = firebase.auth().currentUser.displayName;
+  userId = firebase.auth().currentUser.uid;
+  preferredName = $("#preferred-name").val().trim();
+
+
+  var theme;
+  if ($('#dark-theme').is(':checked')) {
+    theme = "Dark Theme"
+  } else {
+    theme = "Light Theme"
+  };
+
+  var sportOne = $("#hiking").val().trim();
+  var sportTwo = $("#cycling").val().trim();
+  var sportThree = $("#snow-sports").val().trim();
+  var sportFour = $("#general-fitness").val().trim();
+  var sports = [];
+  if ($('#hiking').is(':checked')) {
+    sports.push(sportOne);
+  }
+  if ($('#cycling').is(':checked')) {
+    sports.push(sportTwo);
+  };
+  if ($('#snow-sports').is(':checked')) {
+    sports.push(sportThree);
+  };
+  if ($('#general-fitness').is(':checked')) {
+    sports.push(sportFour);
+  };
+
+  var charity;
+  if ($('#water').is(':checked')) {
+    charity = "Water";
+  }
+  if ($('#sierra').is(':checked')) {
+    charity = "Sierra";
+  } else if ($('#ocean').is(':checked')) {
+    charity = "Ocean";
+  };
+
+  var firstTime = false;
+
+  // Save new value to Firebase
+  var userProfile = database.ref('users/' + userId).set({
+    userName: userName,
+    preferredName: preferredName,
+    themeChoice: theme,
+    charityChoice: charity,
+    sportChoice: sports,
+    firstTime: firstTime
+  });
+
+  getUserProfile();
   var modal = UIkit.modal('#setup-modal');
-      modal.show();
-    });
+    modal.hide();
 
-      //Log info to database on submit
-      $("#finished-setup").on("click", function(event) {
-        event.preventDefault();
-        userName = firebase.auth().currentUser.displayName;
-        userId = firebase.auth().currentUser.uid;
-        preferredName = $("#preferred-name").val().trim();
-        var theme;
-        if ($('#dark-theme').is(':checked')) {
-          theme = "Dark Theme"
-        } else {
-          theme = "Light Theme"
-        };
-        var things = [];
-
-        if ($('#things1').is(':checked')) {
-          things.push("things1");
-        }
-        if ($('#things2').is(':checked')) {
-          things.push("things2");
-        };
-        if ($('#things3').is(':checked')) {
-          things.push("things3");
-        };
-        if ($('#things4').is(':checked')) {
-          things.push("things4");
-        };
-        console.log(things);
-        if ($('#charity2').is(':checked')) {
-          charity = "Charity 2";
-        } else if ($('#charity3').is(':checked')) {
-          charity = "Charity 3";
-        };
-        var charity;
-        if ($('#charity1').is(':checked')) {
-          charity = "Charity 1";
-        }
-        if ($('#charity2').is(':checked')) {
-          charity = "Charity 2";
-        } else if ($('#charity3').is(':checked')) {
-          charity = "Charity 3";
-        };
+});
 
 
-        // Save new value to Firebase
-        var userProfile = database.ref('users/' + userId).set({
-          userName: userName,
-          preferredName: preferredName,
-          themeChoice: theme,
-          charityChoice: charity,
-          thingChoice: things
-        });
 
-        var modal = UIkit.modal('#setup-modal');
-        modal.hide();
-      });
+//Extract from Firebase and Display in DOM
+var chosenCharity;
+var chosenTheme;
+var chosenSports;
+var email;
+var preferredName;
 
-// Log Database Values to Settings Page
+function getUserProfile(){
+  var userId = firebase.auth().currentUser.uid;
+  firebase.database().ref('/users/' + userId + '/charityChoice/').once('value').then(function(snapshot){
+    chosenCharity = (snapshot.val());
+    if (chosenCharity === 'Water'){
+      document.getElementById('charity-logo').src = 'assets/images/water.png';
+      document.getElementById('display-charity').innerHTML = 'Water.org';
+      document.getElementById('charity-description').innerHTML = 'Water.org thanks you for your donations! Water.org has empowered 10 million people with access to safe water and sanitation through affordable financing.';
+    } else if (chosenCharity === 'Sierra'){
+      document.getElementById('charity-logo').src = 'assets/images/sierra-club.png';
+      document.getElementById('display-charity').innerHTML = 'SierraClubFoundation.org';
+      document.getElementById('charity-description').innerHTML = 'SierraClubFoundation.org thanks you for your donations! The Sierra Club Foundation promotes climate solutions, conservation, and movement building through a powerful combination of strategic philanthropy and grassroots advocacy.';
+    } else if (chosenCharity === 'Ocean'){
+      document.getElementById('charity-logo').src = 'assets/images/ocean-conservancy.png';
+      document.getElementById('display-charity').innerHTML = 'OceanConservancy.org';
+      document.getElementById('charity-description').innerHTML = 'OceanConservancy.org thanks you for your donations! Together, we create science-based solutions for a healthy ocean and the wildlife and communities that depend on it.';
+    } else {
+      document.getElementById('display-charity').innerHTML = 'You are not currently sending your donations anywhere!';
+    }
+  });
 
-// var preferredName;
-// var themeChoice;
-// var charityChoice;
-// var thingChoice;
-//
-//
-// database.ref('users/' + userId).on("child_added", function (childSnapshot) {
-//
-//   trainName = childSnapshot.val().trainName;
-//   trainDestination = childSnapshot.val().trainDestination;
-//   trainFrequency = childSnapshot.val().trainFrequency;
-//   firstTrain = childSnapshot.val().firstTrain;
-//   difference = moment().diff(moment.unix(firstTrain), "minutes");
-//   timeLeft = moment().diff(moment.unix(firstTrain), 'minutes') % trainFrequency;
-//   mins = moment(trainFrequency - timeLeft, "mm").format('mm');
-//   nextTrain = moment().add(mins, "m").format("hh:mm A");
-//
-//
-// $("#train-times").append("<tr><td>" + childSnapshot.val().trainName + "</td><td>" + childSnapshot.val().trainDestination +
-// "</td><td>" + childSnapshot.val().trainFrequency + " minutes</td><td>" + nextTrain + "</td><td>" + mins + " minutes</td></tr>");
-//
-// //Log errors to the console
-// }, function(errorObject) {
-//   console.log("The read failed: " + errorObject.code);
-// });
+  firebase.database().ref('/users/' + userId + '/preferredName/').once('value').then(function(snapshot){
+    preferredName = (snapshot.val());
+    $("#welcome").append("<span class='welcome'>Welcome,  " + preferredName + "!</span>");
+  });
+
+  firebase.database().ref('/users/' + userId + '/themeChoice/').once('value').then(function(snapshot){
+    chosenTheme = (snapshot.val());
+  });
+
+  firebase.database().ref('/users/' + userId + '/sportChoice/').once('value').then(function(snapshot){
+    thingChoice = (snapshot.val());
+  });
+}
+
+
+
+function userSettings(){
+
+  var userId = firebase.auth().currentUser.uid;
+  firebase.database().ref('/users/' + userId + '/charityChoice/').once('value').then(function(snapshot){
+    chosenCharity = (snapshot.val());
+    console.log('Chosen charity: ' + chosenCharity);
+
+    if (chosenCharity === 'Water'){
+      document.getElementById('settings-charity').innerHTML = 'Water.org';
+    } else if (chosenCharity === 'Sierra'){
+      document.getElementById('settings-charity').innerHTML = 'SierraClubFoundation.org';
+    } else if (chosenCharity === 'Ocean'){
+      document.getElementById('settings-charity').innerHTML = 'OceanConservancy.org';
+    } else {
+      document.getElementById('display-charity').innerHTML = 'You are not currently sending your donations anywhere!';
+    }
+  });
+
+  firebase.database().ref('/users/' + userId + '/preferredName/').once('value').then(function(snapshot){
+    preferredName = (snapshot.val());
+    document.getElementById('settings-preferred-name').innerHTML = preferredName;
+  });
+
+  firebase.database().ref('/users/' + userId + '/themeChoice/').once('value').then(function(snapshot){
+    chosenTheme = (snapshot.val());
+    document.getElementById('settings-theme').innerHTML = chosenTheme;
+  });
+
+  firebase.database().ref('/users/' + userId + '/sportChoice/').once('value').then(function(snapshot){
+    thingChoice = (snapshot.val());
+    document.getElementById('settings-purchase-preferences').innerHTML = thingChoice;
+  });
+}

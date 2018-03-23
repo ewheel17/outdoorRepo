@@ -6,240 +6,224 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="icon" href="assets/images/logo.png" type="image/gif" sizes="16x16">
 
   <title>outdoorRepo</title>
 
+  <!-- Google Fonts API -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <!-- Firebase UI Scripts -->
+  <script type="text/javascript" src="http://classic.avantlink.com/affiliate_app_confirm.php?mode=js&authResponse=d4270748e825e869ba441d1ff08433eaeef5b6cf"></script>
   <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.js"></script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" />
-
-  <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+  <!-- Custom styles for this template -->
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-</head>
+  <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css">
 
-<body>
-  <header>
-    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-      <nav class="uk-navbar-container" uk-navbar>
-        <div class="uk-navbar-right">
 
-          <div class="uk-navbar-item">
-            Cycling
+  <body onload="getUserProfile()">
+    <header>
+      <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+        <nav class="uk-navbar-container" uk-navbar>
+          <div class="uk-navbar-left">
+            <img src="assets/images/logo.png" class="uk-navbar-item uk-logo">
           </div>
+          <div class="uk-navbar-right">
+            <div class="uk-navbar-item">
+              <a class="uk-button uk-button-default" href="settings.html">My Account </a>
+            </div>
+            <div class="uk-navbar-item">
+              <a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Tell a Friend</a>
+            </div>
+            <div class="uk-navbar-item">
+              <a class="uk-button uk-button-primary" href="index.html">Logout</a>
+            </div>
+          </div>
+        </nav>
+      </div>
 
-          <div class="uk-navbar-item">
-            Snow Sports
-          </div>
-          <div class="uk-navbar-item">
-            Hiking
-          </div>
-          <div class="uk-navbar-item">
-            Camping
-          </div>
-          <div class="uk-navbar-item">
-            <a href="settings.html"> My Account </a>
-          </div>
-          <div class="uk-navbar-item">
-            <a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Tell a Friend</a>
-          </div>
-          <div class="uk-navbar-item">
-            <a class="uk-button uk-button-primary" href="index.html">Logout</a>
-          </div>
-        </div>
-      </nav>
-    </div>
+      <div class="uk-text-center dash-one" uk-grid>
 
-    <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-      <div class="donations">
-
-        <p id="welcome"></p>
-        <p>So far, you have generated
-          <strong>${dollars}</strong> for charity! Kudos!</p>
-        <p>But don't forget to stuff your cookie jar so you can keep on donating.</p>
+        <h1 id="welcome"></h1>
+        <p>Your charity donations: <strong>${dollars}</strong></p>
+        <p>Don't forget to stuff your cookie jar so you can keep on donating.</p>
         <button id="cookie-stuff" class="uk-button uk-button-primary" type="button">give me all the cookies</button>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main class="uk-container uk-container-large uk-margin-large-top">
-    <h2>Your Shopping Destinations</h2>
-    <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <main>
 
-      <div>
-        <div class="uk-card uk-card-default uk-card-body">
-          <h3>Product #1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-            bibendum eget ac neque.</p>
-        </div>
-      </div>
-      <div>
-        <div class="uk-card uk-card-default uk-card-body">
-          <h3>Product #2</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-            bibendum eget ac neque.</p>
-        </div>
-      </div>
-      <div>
-        <div class="uk-card uk-card-default uk-card-body">
-          <h3>Product #3</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-            bibendum eget ac neque.</p>
-        </div>
-      </div>
-    </div>
+      <div class="uk-container uk-container-expand dash-two">
+        <h1>Your Shopping Destinations</h1>
+        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
 
-    <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-
-      <div>
-        <div class="uk-card uk-card-default uk-card-body">
-          <h3>Product #4</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-            bibendum eget ac neque.</p>
-        </div>
-      </div>
-      <div>
-        <div class="uk-card uk-card-default uk-card-body">
-          <h3>Product #5</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-            bibendum eget ac neque.</p>
-        </div>
-      </div>
-      <div>
-        <div class="uk-card uk-card-default uk-card-body">
-          <h3>Product #6</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-            bibendum eget ac neque.</p>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
-      <div>
-        <h2>Who you're currently donating to</h2>
-        <div class="uk-background-muted uk-padding">
-          <img class="flat-icon" src="assets/images/001-handicap.png">
-          <h3>Charity #1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-            bibendum eget ac neque.</p>
-
-          <button id="cookie-stuff" class="uk-button uk-button-primary" type="button">change my charity</button>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-
-    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-      <nav class="uk-navbar-container" uk-navbar>
-        <div class="uk-navbar-right">
-
-          <div class="uk-navbar-item">
-            Copyright &copy; 2018-2019 | outdoorRepo
+          <div>
+            <div class="uk-card uk-card-default uk-card-body">
+              <h3>Product #1</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+            </div>
           </div>
-
-          <div class="uk-navbar-item">
-            Terms
+          <div>
+            <div class="uk-card uk-card-default uk-card-body">
+              <h3>Product #2</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+            </div>
           </div>
-          <div class="uk-navbar-item">
-            Support
+          <div>
+            <div class="uk-card uk-card-default uk-card-body">
+              <h3>Product #3</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+            </div>
           </div>
-
         </div>
-      </nav>
-    </div>
-  </footer>
 
-  <!-- Refer a Friend Modal -->
-  <div id="modal-center" class="uk-flex-top" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
 
-      <button class="uk-modal-close-default" type="button" uk-close></button>
-
-      <form action="">
-        <!-- Put where we want the data to be sent in action -->
-        <fieldset class="uk-fieldset">
-
-          <legend class="uk-legend">
-            <u>Tell A Friend</u>
-          </legend>
-
-          <div class="uk-margin">
-            <label for="friendMail">Friend's Name</label>
-            <input class="uk-input" id="friendMail" type="text" placeholder="Friend's Name Here...">
+          <div>
+            <div class="uk-card uk-card-default uk-card-body">
+              <h3>Product #4</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+            </div>
           </div>
-
-          <div class="uk-margin">
-            <label for="friendMessage">Optional Message</label>
-            <textarea class="uk-textarea" id="friendMessage" rows="5" placeholder="Optional Message Here..."></textarea>
+          <div>
+            <div class="uk-card uk-card-default uk-card-body">
+              <h3>Product #5</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+            </div>
           </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-body">
+              <h3>Product #6</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-          <button class="uk-button uk-button-primary" type="submit">Send</button>
+      <div class="dash-three uk-text-center uk-container uk-container-expand">
+        <h2>Your Donations</h2>
+        <img id="charity-logo">
+        <h3 id="display-charity"></h3>
+        <p id="charity-description"></p>
+        <a class="uk-button uk-button-primary" href="settings.html" type="button">Change my Charity</a>
+      </div>
+    </main>
 
-        </fieldset>
-      </form>
+    <footer>
 
+      <div class="bottom-nav uk-text-center uk-margin-remove">
+        <ul>
+          <li>
+            <a href="">Terms</a>
+          </li>
+          <li>
+            <a href="">Support</a>
+          </li>
+          <!-- FAQ modal link -->
+          <li>
+            <a href="#faq-modal" uk-toggle>FAQs</a>
+          </li>
+        </ul>
+        <p>
+          Copyright &copy; 2018-2019 | outdoorRepo
+        </p>
+      </div>
+
+
+    </footer>
+
+    <!-- Refer a Friend Modal -->
+    <div id="modal-center" class="uk-flex-top" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+
+        <form action="">
+          <!-- Put where we want the data to be sent in action -->
+          <fieldset class="uk-fieldset">
+
+            <legend class="uk-legend">
+              <u>Tell A Friend</u>
+            </legend>
+
+            <div class="uk-margin">
+              <label for="friendMail">Friend's Name</label>
+              <input class="uk-input" id="friendMail" type="text" placeholder="Friend's Name Here...">
+            </div>
+
+            <div class="uk-margin">
+              <label for="friendMessage">Optional Message</label>
+              <textarea class="uk-textarea" id="friendMessage" rows="5" placeholder="Optional Message Here..."></textarea>
+            </div>
+
+            <button class="uk-button uk-button-primary" type="submit">Send</button>
+
+          </fieldset>
+        </form>
+
+      </div>
     </div>
-  </div>
 
 
 
-  <!--Account Setup Modal -->
+    <!--Account Setup Modal -->
     <div id="setup-modal" class="uk-flex-top" uk-modal>
 
-        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-          <div id="setup-modal-text">
-            <button class="uk-modal-close-default" type="button" uk-close></button>
+      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+        <div id="setup-modal-text">
+          <button class="uk-modal-close-default" type="button" uk-close></button>
 
           <form>
-          <h2>It looks like you just logged in for the first time. Congrats!</h2>
+            <h2>It looks like you just logged in for the first time. Congrats!</h2>
             <p>We'd like to help you get your user dashboard set up!</p>
 
             <h3> What should we call you? <h3>
             <input class="uk-input" id="preferred-name">
 
-            <h3> Do you prefer a light theme or a dark theme? </h3>
+            <h3>Which theme would you like to enable?</h3>
             <div class="uk-form-controls uk-form-controls-text">
-            <p><input class="uk-radio" type="radio" name="theme" id="light-theme"> I enjoy the light</p>
-            <p><input class="uk-radio" type="radio" name="theme" id="dark-theme"> I'm more of a dark-theme person</p>
-          </div>
+              <p><input class="uk-radio" type="radio" name="theme" id="light-theme"> Light Theme</p>
+              <p><input class="uk-radio" type="radio" name="theme" id="dark-theme"> Dark Theme</p>
+            </div>
 
             <div class="uk-grid-small" uik-grid>
-            <h3>What do you like to buy?</h3>
-            <div class="uk-width-1-4@s">
-            <p> <input class="uk-checkbox" value="Things1" id="things1" type="checkbox"> Things 1</p>
-          </div>
-          <div class="uk-width-1-4@s">
-          <p> <input class="uk-checkbox" value="Things2" id="things2" type="checkbox"> Things 2</p>
-        </div>
-        <div class="uk-width-1-4@s">
-        <p> <input class="uk-checkbox" value="Things3" id="things3" type="checkbox"> Things 3</p>
-      </div>
-      <div class="uk-width-1-4@s">
-      <p> <input class="uk-checkbox" value="Things4" id="things4" type="checkbox"> Things 4</p>
-    </div>
+              <h3>What do you like to buy?</h3>
+              <div class="uk-width-1-4@s">
+                <p> <input class="uk-checkbox" value="hiking" id="hiking" type="checkbox"> Hiking Gear</p>
+              </div>
+              <div class="uk-width-1-4@s">
+                <p> <input class="uk-checkbox" value="cycling" id="cycling" type="checkbox"> Cycling Gear</p>
+              </div>
+              <div class="uk-width-1-4@s">
+                <p> <input class="uk-checkbox" value="snow-sports" id="snow-sports" type="checkbox"> Snow Sports</p>
+              </div>
+              <div class="uk-width-1-4@s">
+                <p> <input class="uk-checkbox" value="gen-fitness" id="general-fitness" type="checkbox"> General Fitness</p>
+              </div>
             </div>
 
             <h3>Which charity would you like to contribute to?</h3>
-            <p><input class="uk-radio" value="Charity1" name="charity" type="radio" id="charity1"> Charity1</p>
-            <p><input class="uk-radio" value="Charity2" name="charity" type="radio" id="charity2"> Charity2</p>
-            <p><input class="uk-radio" value="Charity3" name="charity" type="radio" id="charity3"> Charity3</p>
+            <p><input class="uk-radio" value="water" name="charity" type="radio" id="water"> Water.org</p>
+            <p><input class="uk-radio" value="sierra" name="charity" type="radio" id="sierra"> SierraClubFoundation.org</p>
+            <p><input class="uk-radio" value="ocean" name="charity" type="radio" id="ocean"> OceanConservancy.org</p>
             <a type="button" class="uk-button uk-button-default" id="finished-setup" uk-toggle>Submit</a>
         </div>
       </div>
     </div>
 
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
-  <script src="assets/app.js"></script>
 
-</body>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
+    <script src="assets/app.js"></script>
+
+  </body>
 
 </html>

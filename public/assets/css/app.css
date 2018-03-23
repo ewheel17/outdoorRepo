@@ -5,8 +5,9 @@ body {
 footer {
   background-color: #eee; }
 
-footer nav{
-  margin-top: 50px;
+
+#charity-logo{
+  max-height: 250px;
 }
 
 .uk-navbar{
@@ -120,6 +121,50 @@ hr{
   text-decoration: none;
   color: #3ddb93;
   transition-duration: 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+
+/* Settings */
+.settings-one {
+  padding: 80px 50px !important;
+  min-height: 400px;
+  background-color: #f4f4f4;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.settings-one img{
+  max-height: 300px;
+}
+
+/* Dashboard */
+.dash-one {
+  padding: 80px 50px !important;
+  min-height: 400px;
+  background-color: #f4f4f4;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dash-two {
+  padding: 80px 50px !important;
+  min-height: 400px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.dash-three {
+  padding: 80px 50px !important;
+  min-height: 400px;
+  background-color: #f4f4f4;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .your-charity {
@@ -216,12 +261,12 @@ hr{
 }
 
 .mdl-card {
-  border: 2px solid #3ddb93 !important;
-  border-radius: 4px !important;
-  margin-top: 30px !important;
+  border: none !important;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
+
 
 .mdl-button--primary.mdl-button--primary {
   color: #3ddb93;
@@ -229,9 +274,9 @@ hr{
 
 .btn-primary, .firebaseui-idp-password,
 .mdl-button--raised.mdl-button--colored {
-  background-color: #3ddb93;
-  border: 1px solid #3ddb93;
-  border-radius: 30px;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #3ddb93;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -241,9 +286,10 @@ hr{
 .mdl-button--raised.mdl-button--colored:hover {
   background-color: #36c584;
   border: 1px solid #36c584;
-  -webkit-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
+  color: #fff;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -261,8 +307,8 @@ hr{
 }
 
 .login input[type=password], input[type=email] {
-  border: 1px solid #54b5ff;
-  border-radius: 0;
+  border: none !important;
+  border-bottom: 2px solid #36c584 !important;
 }
 
 .login h1 {

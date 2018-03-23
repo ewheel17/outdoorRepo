@@ -6,39 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="icon" href="assets/images/logo.png" type="image/gif" sizes="16x16">
 
   <title>outdoorRepo</title>
 
-  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-  <script src="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.js"></script>
+  <!-- Google Fonts API -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" />
-
-  <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+  <!-- Custom styles for this template -->
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css">
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="http://classic.avantlink.com/affiliate_app_confirm.php?mode=js&authResponse=d4270748e825e869ba441d1ff08433eaeef5b6cf"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
 </head>
 
-<body>
+<body onload="userSettings()">
   <header>
     <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
       <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-right">
-
           <div class="uk-navbar-item">
-            Cycling
-          </div>
-
-          <div class="uk-navbar-item">
-            Snow Sports
-          </div>
-          <div class="uk-navbar-item">
-            Hiking
-          </div>
-          <div class="uk-navbar-item">
-            Camping
-          </div>
-          <div class="uk-navbar-item">
-            My Account
+            <a class="uk-button uk-button-default" href="dashboard.html" uk-toggle>Back to Dashboard</a>
           </div>
           <div class="uk-navbar-item">
             <a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Tell a Friend</a>
@@ -49,31 +42,54 @@
         </div>
       </nav>
     </div>
-
-
   </header>
 
-  <main class="uk-container uk-container-large uk-margin-large-top">
-
-  <h1> Settings </h1>
-
-<div class="uk-container">
-  <h3> Preferred Name </h3>
-    <div id="preferred-name-setting"></div>
+  <main>
 
 
-  <h3> Email Address </h3>
-      <div id="email-setting"></div>
-  <h3> Purchase Preferences </h3>
-  <div id="purchase-setting"></div>
+    <div class="settings-one uk-container uk-container-expand">
+      <div class="uk-text-center">
+        <img src="assets/images/logo.png" alt="outdoorrepo logo" />
+        <h1> Settings </h1>
+      </div>
+      <h4> Preferred Name </h4>
+      <div>
+        <p id="settings-preferred-name">
 
-  <h3> Theme </h3>
-<div id="theme-setting"></div>
+        </p>
+      </div>
 
-  <h3> Charity Choice </h3>
-  <div id="charity-setting"></div>
 
-</div>
+      <h4> Email Address </h4>
+      <div>
+        <p id="settings-email">
+
+        </p>
+      </div>
+
+      <h4> Purchase Preferences </h4>
+      <div>
+        <p id="settings-purchase-preferences">
+
+        </p>
+      </div>
+
+      <h4> Theme </h4>
+      <div>
+        <p id="settings-theme">
+
+        </p>
+      </div>
+
+      <h4> Charity Choice </h4>
+      <div>
+        <p id="settings-charity">
+
+        </p>
+      </div>
+
+      <a class="uk-button uk-button-primary" href="index.html" id="change-settings">Edit Profile</a>
+    </div>
 
   </main>
 
@@ -140,8 +156,7 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
   <script src="assets/app.js"></script>
