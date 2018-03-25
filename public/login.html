@@ -21,11 +21,63 @@
   <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+  <script>
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAM-t2CaMxXwb_HMZaqs-QHaGe1KETwmUM",
+    authDomain: "outdoorrepo-e22c5.firebaseapp.com",
+    databaseURL: "https://outdoorrepo-e22c5.firebaseio.com",
+    projectId: "outdoorrepo-e22c5",
+    storageBucket: "outdoorrepo-e22c5.appspot.com",
+    messagingSenderId: "565862631025"
+  };
+    firebase.initializeApp(config);
+
+    var database = firebase.database();
+
+  //Login Scripts
+  var uiConfig = {
+    callbacks: {
+      signInSuccess: function(currentUser, credential, redirectUrl) {
+        // User successfully signed in.
+        // Return type determines whether we continue the redirect automatically
+        // or whether we leave that to developer to handle.
+        return true;
+      },
+      uiShown: function() {
+        // The widget is rendered.
+        // Hide the loader.
+        document.getElementById('loader').style.display = 'none';
+      }
+    },
+    // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+    signInFlow: 'popup',
+    signInSuccessUrl: 'dashboard.html',
+    signInOptions: [
+      // Leave the lines as is for the providers you want to offer your users.
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID
+    ],
+    tosUrl: 'http://github.com'
+  };
+
+  // Initialize the FirebaseUI Widget using Firebase.
+  var ui = new firebaseui.auth.AuthUI(firebase.auth());
+  // The start method will wait until the DOM is loaded.
+  ui.start('#firebaseui-auth-container', uiConfig);
+  </script>
+
+
 </head>
 
 <body>
 
-  <div class="container">
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
+
+
+
+  <!-- <div class="container">
     <div class="row">
       <div class="col login">
         <span class="login-icon">
@@ -33,11 +85,11 @@
         </span>
         <h1>outdoorRepo</h1>
 
-        <div id="firebaseui-auth-container"></div>
+
         <p class="date">&copy; 2018-2019</p>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
   <footer>
@@ -67,6 +119,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="assets/app.js"></script>
+
 
 </body>
 
