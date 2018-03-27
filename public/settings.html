@@ -39,15 +39,13 @@
 
     var database = firebase.database();
 
-    $(document).ready(function(){
-      userSettings();
     });
 
   </script>
 
 </head>
 
-<body onload="userSettings()">
+<body>
   <header>
     <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
       <nav class="uk-navbar-container" uk-navbar>
@@ -209,6 +207,14 @@
         console.log(error);
       });
     });
+  </script>
+
+  <script>
+
+  $(document).ready(function(){
+    userSettings();
+  });
+
   </script>
 
 </body>

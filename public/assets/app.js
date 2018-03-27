@@ -28,10 +28,6 @@ function setUpDash(){
             modal.show();
 });
 
-$(document).ready(function(){
-  getUserProfile();
-});
-
 
 //Log info to database on submit
 $("#finished-setup").on("click", function(event) {
@@ -100,7 +96,6 @@ var email;
 var preferredName;
 
 function getUserProfile(){
-  $(document).ready(function() {
   var userId = firebase.auth().currentUser.uid;
   firebase.database().ref('/users/' + userId + '/charityChoice/').once('value').then(function(snapshot){
     chosenCharity = (snapshot.val());
@@ -120,6 +115,7 @@ function getUserProfile(){
       document.getElementById('display-charity').innerHTML = 'You are not currently sending your donations anywhere!';
     }
   });
+}
 
   firebase.database().ref('/users/' + userId + '/preferredName/').once('value').then(function(snapshot){
     preferredName = (snapshot.val());
