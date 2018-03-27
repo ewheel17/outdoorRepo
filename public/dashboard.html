@@ -279,9 +279,18 @@
 
 
     <script>
-    $(document).ready(function(){
-      getUserProfile();
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+              getUserProfile();
+      } else {
+        // No user is signed in.
+      }
     });
+    
+
+
+
     </script>
 
   </body>

@@ -207,9 +207,14 @@
 
   <script>
 
-  $(document).ready(function(){
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
     userSettings();
+    } else {
+      // No user is signed in.
+    }
   });
+
 
   </script>
 
