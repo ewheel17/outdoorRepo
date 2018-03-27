@@ -115,7 +115,7 @@ function getUserProfile(){
       document.getElementById('display-charity').innerHTML = 'You are not currently sending your donations anywhere!';
     }
   });
-}
+
 
   firebase.database().ref('/users/' + userId + '/preferredName/').once('value').then(function(snapshot){
     preferredName = (snapshot.val());
@@ -129,8 +129,8 @@ function getUserProfile(){
   firebase.database().ref('/users/' + userId + '/sportChoice/').once('value').then(function(snapshot){
     thingChoice = (snapshot.val());
   });
-});
 }
+
 
 
 function userSettings(){
