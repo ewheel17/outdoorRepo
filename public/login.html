@@ -13,7 +13,10 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116544559-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'UA-116544559-1');
@@ -33,7 +36,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css">
 
   <script>
-
     // Initialize Firebase
     var config = {
       apiKey: "AIzaSyAM-t2CaMxXwb_HMZaqs-QHaGe1KETwmUM",
@@ -50,13 +52,13 @@
     //Login Scripts
     var uiConfig = {
       callbacks: {
-        signInSuccess: function (currentUser, credential, redirectUrl) {
+        signInSuccess: function(currentUser, credential, redirectUrl) {
           // User successfully signed in.
           // Return type determines whether we continue the redirect automatically
           // or whether we leave that to developer to handle.
           return true;
         },
-        uiShown: function () {
+        uiShown: function() {
           // The widget is rendered.
           // Hide the loader.
           document.getElementById('loader').style.display = 'none';
@@ -85,18 +87,18 @@
 
   <div class="uk-container uk-container-expand section-one">
     <div class="uk-container uk-container-small login-box">
-    <div class="uk-text-center login">
-      <h1>outdoorRepo</h1>
-    <span class="login-icon">
+      <div class="uk-text-center login">
+        <h1>outdoorRepo</h1>
+        <span class="login-icon">
       <i class="fa fa-user-o" aria-hidden="true"></i>
     </span>
+      </div>
+      <div id="firebaseui-auth-container"></div>
+      <div id="loader" class="uk-text-center">
+        <div uk-spinner></div>
+      </div>
+    </div>
   </div>
-  <div id="firebaseui-auth-container"></div>
-  <div id="loader" class="uk-text-center">
-    <div uk-spinner></div>
-  </div>
-</div>
-</div>
 
   <footer>
 
@@ -123,12 +125,9 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="assets/app.js"></script>
 
 

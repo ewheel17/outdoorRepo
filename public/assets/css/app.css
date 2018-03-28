@@ -3,14 +3,14 @@ body {
 }
 
 footer {
-  background-color: #eee; }
+  background-color: #eee;
+}
 
-
-#charity-logo{
+#charity-logo {
   max-height: 250px;
 }
 
-.uk-navbar{
+.uk-navbar {
   padding: 10px;
   background-color: #f4f4f4 !important;
   border-top: 10px solid #3ddb93;
@@ -37,8 +37,7 @@ footer {
   align-items: center;
 }
 
-.section-one img,
-.section-two img{
+.section-one img, .section-two img {
   max-height: 300px;
 }
 
@@ -53,7 +52,7 @@ footer {
   padding: 100px 50px 50px 50px !important;
 }
 
-.section-three h3{
+.section-three h3 {
   margin-top: -20px;
   margin-bottom: 50px;
 }
@@ -67,75 +66,73 @@ footer {
   transition-duration: 0.3s;
 }
 
-
 .section-four {
   padding: 80px 100px !important;
   background-color: #fff;
 }
 
-.section-four img{
+.section-four img {
   padding: 40px;
 }
 
-.section-four h4{
+.section-four h4 {
   text-transform: uppercase;
   color: #1e87f0;
   font-weight: 800;
   margin-top: 10px;
 }
 
-hr{
+hr {
   margin: 0 auto !important;
   max-width: 80%;
 }
+
 .section-five {
   background-color: #3ddb93;
   padding: 100px 50px 10px 50px !important;
-
 }
 
-.section-five h1,
-.section-five h3{
-    color: #fff;
-    font-weight: 300;
+.section-five h1, .section-five h3 {
+  color: #fff;
+  font-weight: 300;
 }
 
-.section-five h3{
+.section-five h3 {
   margin-top: -20px;
 }
 
-.section-five img{
+.section-five img {
   max-height: 200px;
 }
 
-.bottom-nav{
+.bottom-nav {
   padding: 30px;
   font-size: 12px;
 }
 
-.bottom-nav ul{
+.bottom-nav ul {
   list-style-type: none;
 }
 
-.bottom-nav li{
+.bottom-nav li {
   display: inline;
   text-align: center;
   margin: 10px;
 }
 
-.bottom-nav a{
+.bottom-nav a {
   color: #999;
   text-decoration: none;
 }
 
-.bottom-nav a:hover{
+.bottom-nav a:hover {
   color: #3ddb93;
   transition-duration: 0.3s;
   text-decoration: none;
 }
 
-
 /* Settings */
+
 .settings-one {
   padding: 80px 50px !important;
   min-height: 400px;
@@ -145,35 +142,49 @@ hr{
   flex-direction: column;
 }
 
-.settings-one img{
+.settings-one img {
   max-height: 300px;
 }
 
-.settings-one h4{
+.settings-one h4 {
   margin-bottom: 0 !important;
 }
 
 /* Dashboard */
-.dash-one {
-  padding: 80px 50px !important;
-  min-height: 400px;
+
+.dash-affiliates h1, .dash-products h1, .dash-charity h1 {
+  margin-bottom: 50px;
+  font-size: 60px;
+  font-weight: 300;
+}
+
+.dash-greeting {
+  padding: 50px !important;
+  min-height: 300px;
   background-color: #f4f4f4;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.dash-two {
-  padding: 80px 50px !important;
+.dash-affiliates {
+  padding: 50px !important;
   min-height: 400px;
-  background-color: #fff;
+  background-color: #f4f4f4;
   text-align: center;
 }
 
-.dash-three {
-  padding: 80px 50px !important;
+.dash-products {
+  padding: 50px !important;
   min-height: 400px;
-  background-color: #f4f4f4;
+  background-color: #3ddb93;
+  text-align: center;
+}
+
+.dash-charity {
+  padding: 50px !important;
+  min-height: 400px;
+  background-color: #fff;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -182,7 +193,8 @@ hr{
 .your-charity {
   text-align: center;
   padding: 50px;
-  background-color: #fff; }
+  background-color: #fff;
+}
 
 .donations {
   background-color: #3ddb93;
@@ -200,7 +212,8 @@ hr{
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .products {
   background-color: #eee;
@@ -218,30 +231,37 @@ hr{
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .product-box {
   height: 200px;
   width: 200px;
   background-color: #fff;
-  color: #000; }
+  color: #000;
+}
 
 .welcome {
-  font-size: 32px; }
+  font-size: 32px;
+}
 
 .disclaimer {
-  font-size: 16px !important; }
+  font-size: 16px !important;
+}
 
 .product-line {
   min-height: 400px;
-  display: none; }
+  display: none;
+}
 
 .charity {
   min-height: 525px;
 }
 
 /*****************************/
+
 /* GOOGLE AUTH CSS OVERRIDES */
+
 /*****************************/
 
 .login {
@@ -258,14 +278,19 @@ hr{
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column; }
-  .login .btn-primary {
-    margin: 20px 0; }
-  .login h1 {
-    font-size: 24px !important;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 100 !important;
-    color: #36c584; }
+  flex-direction: column;
+}
+
+.login .btn-primary {
+  margin: 20px 0;
+}
+
+.login h1 {
+  font-size: 24px !important;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100 !important;
+  color: #36c584;
+}
 
 .firebaseui-textfield.mdl-textfield .firebaseui-input {
   padding: 5px;
@@ -278,14 +303,11 @@ hr{
   box-shadow: none;
 }
 
-
-
 .mdl-button--primary.mdl-button--primary {
   color: #3ddb93;
 }
 
-.btn-primary, .firebaseui-idp-password,
-.mdl-button--raised.mdl-button--colored {
+.btn-primary, .firebaseui-idp-password, .mdl-button--raised.mdl-button--colored {
   background-color: #fff;
   color: #000;
   border: 2px solid #3ddb93;
@@ -293,9 +315,7 @@ hr{
   box-shadow: none;
 }
 
-.btn-primary:hover,
-.firebaseui-idp-password:hover,
-.mdl-button--raised.mdl-button--colored:hover {
+.btn-primary:hover, .firebaseui-idp-password:hover, .mdl-button--raised.mdl-button--colored:hover {
   background-color: #36c584;
   border: 1px solid #36c584;
   color: #fff;
@@ -306,9 +326,7 @@ hr{
   box-shadow: none;
 }
 
-.btn-primary:active,
-.firebaseui-idp-password:active,
-.mdl-button--raised.mdl-button--colored:active {
+.btn-primary:active, .firebaseui-idp-password:active, .mdl-button--raised.mdl-button--colored:active {
   background-color: #36c584 !important;
   border: 1px solid #36c584 !important;
   -webkit-transition-duration: 0.2s;
@@ -335,18 +353,21 @@ hr{
   text-align: center !important;
 }
 
-.login-box{
+.login-box {
   border: 2px solid #36c584;
   border-radius: 2px;
 }
+
 .flat-icon {
   height: 150px;
   margin: 30px auto;
 }
 
-#change-name .uk-button-primary,
-#change-theme .uk-button-primary,
-#change-charity .uk-button-primary,
-#change-purchase-preferences .uk-button-primary{
+#change-name .uk-button-primary, #change-theme .uk-button-primary, #change-charity .uk-button-primary, #change-purchase-preferences .uk-button-primary {
   margin-top: 5px;
+}
+
+#change-charity img, #setup-modal img {
+  max-height: 80px;
+  margin-right: 20px;
 }
