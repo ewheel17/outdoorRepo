@@ -54,7 +54,6 @@
 
 <body>
   <header>
-    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
       <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-right">
           <div class="uk-navbar-item">
@@ -65,7 +64,6 @@
           </div>
         </div>
       </nav>
-    </div>
   </header>
 
   <main>
@@ -84,7 +82,7 @@
       </div>
 
 
-      <h4> Email Address </h4>
+      <h4> Email Address <a class="uk-button uk-button-info" href="#change-email" uk-toggle>Edit</a> </h4>
       <div>
         <p id="settings-email">
         </p>
@@ -133,8 +131,8 @@
           Copyright &copy; 2018-2019 | outdoorRepo
         </p>
       </div>
-  
-  
+
+
     </footer>
 
 
@@ -149,12 +147,39 @@
         </div>
     </div>
 
+    <!--Change Email-->
+
+      <div id="change-email" class="uk-flex-top" uk-modal>
+          <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+              <button class="uk-modal-close-default" type="button" uk-close></button>
+              <h3>Change Email Address</h3>
+              <input class="uk-input" id="change-user-email">
+              <a type="button" class="uk-button uk-button-primary" id="commit-email-change" uk-toggle>Submit</a>
+          </div>
+      </div>
+
+
   <!--Change Purchase Preferences-->
   <div id="change-purchase-preferences" class="uk-flex-top" uk-modal>
       <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
           <button class="uk-modal-close-default" type="button" uk-close></button>
           <h3>Change Purchase Preferences</h3>
-          <input class="uk-input" id="preferred-name">
+          <div class="uk-width-1-4@s">
+            <p>
+              <input class="uk-checkbox" value="Hiking Gear" id="new-hiking" type="checkbox"> Hiking Gear</p>
+          </div>
+          <div class="uk-width-1-4@s">
+            <p>
+              <input class="uk-checkbox" value="Cycling Gear" id="new-cycling" type="checkbox"> Cycling Gear</p>
+          </div>
+          <div class="uk-width-1-4@s">
+            <p>
+              <input class="uk-checkbox" value="Snow Sports" id="new-snow-sports" type="checkbox"> Snow Sports</p>
+          </div>
+          <div class="uk-width-1-4@s">
+            <p>
+              <input class="uk-checkbox" value="General Fitness" id="new-general-fitness" type="checkbox"> General Fitness</p>
+          </div>
           <a type="button" class="uk-button uk-button-primary" id="commit-purchase-change" uk-toggle>Submit</a>
       </div>
   </div>
@@ -164,7 +189,12 @@
       <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
           <button class="uk-modal-close-default" type="button" uk-close></button>
           <h3>Change Theme</h3>
-          <input class="uk-input" id="preferred-name">
+          <div class="uk-form-controls uk-form-controls-text">
+            <p>
+              <input class="uk-radio" type="radio" name="theme" id="new-light-theme"> Light Theme</p>
+            <p>
+              <input class="uk-radio" type="radio" name="theme" id="new-dark-theme"> Dark Theme</p>
+          </div>
           <a type="button" class="uk-button uk-button-primary" id="commit-theme-change" uk-toggle>Submit</a>
       </div>
   </div>
@@ -174,12 +204,15 @@
       <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
           <button class="uk-modal-close-default" type="button" uk-close></button>
           <h3>Change Charity</h3>
-          <input class="uk-input" id="preferred-name">
+          <p>
+            <input class="uk-radio" value="water" name="charity" type="radio" id="new-water"> Water.org</p>
+          <p>
+            <input class="uk-radio" value="sierra" name="charity" type="radio" id="new-sierra"> SierraClubFoundation.org</p>
+          <p>
+            <input class="uk-radio" value="ocean" name="charity" type="radio" id="new-ocean"> OceanConservancy.org</p>
           <a type="button" class="uk-button uk-button-primary" id="commit-charity-change" uk-toggle>Submit</a>
       </div>
   </div>
-
-
 
 
   <!-- Refer a Friend Modal -->
