@@ -336,18 +336,16 @@ $("#delete").click(function() {
 
 
 //Add Affiliates
-
 $("#submit-affiliates").on("click", function(event) {
-  var cabelas = $("#add-cabelas").val().trim();
-  var marmot = $("#add-marmot").val().trim();
-  var rei = $("#add-rei").val().trim();
-  var deuter = $("#add-deuter").val().trim();
-  var backcountry = $("#add-backcountry").val().trim();
-  var patagonia = $("#add-patagonia").val().trim();
-  var mountainHardware = $("#add-mountain").val().trim();
-  var amazon = $("#add-amazon").val().trim();
+  var cabelas = "Cabela's"
+  var marmot = "Marmot"
+  var rei = "REI"
+  var deuter = "Deuter"
+  var backcountry = "Backcountry"
+  var patagonia = "Patagonia"
+  var mountainHardware = "Mountain Hardware"
+  var amazon = "Amazon.com"
   var activeAffiliates = [];
-
 
   if ($('#add-cabelas').is(':checked')) {
     activeAffiliates.push(cabelas);
@@ -378,4 +376,70 @@ $("#submit-affiliates").on("click", function(event) {
   var userProfile = database.ref('users/' + userId).update({
     activeAffiliates: activeAffiliates
   });
+  window.location.href = "dashboard.html";
 });
+
+
+//Display Affiliates on Dashboard
+
+function displayAffiliates(){
+  var userId = firebase.auth().currentUser.uid;
+  firebase.database().ref('/users/' + userId + '/activeAffiliates/').once('value').then(function(snapshot) {
+    var activeAffiliates = (snapshot.val());
+    console.log(activeAffiliates);
+
+    for (var i = 0; i < activeAffiliates.length; i++){
+      var cabelasImg = "assets/images/cabelas.png";
+      var marmotImg = "assets/images/marmot.jpg";
+      var deuterImg = "assets/images/deuter.jpg";
+      var reiImg = "assets/images/rei.png";
+      var mountainImg = "assets/images/mountain.jpg";
+      var amazonImg = "assets/images/amazonlogo.svg";
+      var backcountryImg = "assets/images/backcountry.png";
+      var patagoniaImg = "assets/images/patagonia.jpg";
+      var affiliateImage;
+
+      if (activeAffiliates[i] === "Cabela's"){
+        affiliateImage = cabelasImg;
+      }
+      if (activeAffiliates[i] === "Marmot"){
+        affiliateImage = marmotImg;
+      }
+      if (activeAffiliates[i] === "REI"){
+        affiliateImage = reiImg;
+      }
+      if (activeAffiliates[i] === "Deuter"){
+        affiliateImage = deuterImg;
+      }
+      if (activeAffiliates[i] === "Mountain Hardware"){
+        affiliateImage = mountainImg;
+      }
+      if (activeAffiliates[i] === "Amazon.com"){
+        affiliateImage = amazonImg;
+      }
+      if (activeAffiliates[i] === "Backcountry"){
+        affiliateImage = backcountryImg;
+      }
+      if (activeAffiliates[i] === "Patagonia"){
+        affiliateImage = patagoniaImg;
+      }
+
+      $("#no-affiliates").fadeOut();
+      $("#affiliate-grid").append("<div class='uk-width-1-4@m'><div class='uk-card uk-card-default uk-card-body'><h3>" + activeAffiliates[i] +
+      "</h3><img src='" + affiliateImage + "'></div></div>");
+    }
+  });
+}
+
+
+//
+// //
+// // $("#affiliate-grid").append()
+// // //
+// // // <div>
+// // //   <div class="uk-card uk-card-default uk-card-body">
+// // //     <h3>Affiliate #1</h3>
+// // //     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
+// // //       bibendum eget ac neque.</p>
+// // //   </div>
+// // // </div>

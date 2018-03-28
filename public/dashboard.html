@@ -41,7 +41,7 @@
           </div>
           <div class="uk-navbar-right">
             <div class="uk-navbar-item">
-              <a class="uk-button uk-button-default" href="search.html" uk-toggle>Add Affiliates</a>
+              <a class="uk-button uk-button-default" href="search.html" uk-toggle>Update Affiliates</a>
             </div>
             <div class="uk-navbar-item">
               <a class="uk-button uk-button-default" href="settings.html" id="user-settings">My Account </a>
@@ -76,68 +76,9 @@
 
       <div class="uk-container uk-container-expand dash-affiliates">
         <h1>Your Shopping Destinations</h1>
-        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3>Affiliate #1</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-                bibendum eget ac neque.</p>
-            </div>
-          </div>
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3>Affiliate #2</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-                bibendum eget ac neque.</p>
-            </div>
-          </div>
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3>Affiliate #3</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-                bibendum eget ac neque.</p>
-            </div>
-          </div>
+        <div class="uk-child-width-expand@s uk-text-center uk-grid-match" id="affiliate-grid" uk-grid>
+          <div id="no-affiliates"> You currently haven't got any selected affiliates. </div>
         </div>
-      </div>
-
-      <div class="uk-container uk-container-expand dash-products">
-        <h1>Recommendations for You</h1>
-        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3>Product #1</h3>
-              <img src="http://via.placeholder.com/200x140">
-            </div>
-          </div>
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3>Product #2</h3>
-              <img src="http://via.placeholder.com/200x140">
-            </div>
-          </div>
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3>Product #3</h3>
-              <img src="http://via.placeholder.com/200x140">
-            </div>
-          </div>
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3>Product #43</h3>
-              <img src="http://via.placeholder.com/200x140">
-            </div>
-          </div>
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3>Product #5</h3>
-              <img src="http://via.placeholder.com/200x140">
-            </div>
-          </div>
-        </div>
-
       </div>
 
     </main>
@@ -329,6 +270,7 @@
       firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
           getUserProfile();
+          displayAffiliates()
         } else {
           // No user is signed in.
         }

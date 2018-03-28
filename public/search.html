@@ -57,7 +57,8 @@
       <div class="uk-container uk-container-expand section-one">
 
         <div class="uk-text-center">
-          <h1> Available Affiliates <h1>
+          <h1> Available Affiliates </h1>
+            <p> Please select <em>all</em> affiliates you'd like to work with. </p>
       </div>
 
       <div class="uk-grid-small  uk-child-width-expand@s uk-grid-match" uk-grid>
@@ -272,19 +273,5 @@
         });
       });
     </script>
-
-
-    <script>
-
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-              getUserProfile();
-      } else {
-        // No user is signed in.
-      }
-    });
-
-    </script>
-
   </body>
 </html>
