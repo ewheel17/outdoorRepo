@@ -14,6 +14,16 @@ footer {
   padding: 10px;
   background-color: #f4f4f4 !important;
   border-top: 10px solid #3ddb93;
+  height: 180px;
+}
+
+.uk-navbar-container .uk-navbar-left img {
+  margin-top: 25px;
+  height: 250px;
+}
+
+.uk-navbar-right .uk-navbar-item a {
+  margin-top: -115px;
 }
 
 .uk-button-default {
@@ -115,15 +125,13 @@ hr{
 
 .bottom-nav a{
   color: #999;
+  text-decoration: none;
 }
 
 .bottom-nav a:hover{
-  text-decoration: none;
   color: #3ddb93;
   transition-duration: 0.3s;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  text-decoration: none;
 }
 
 
