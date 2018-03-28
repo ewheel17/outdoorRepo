@@ -307,3 +307,8 @@ hr {
   max-height: 80px;
   margin-right: 20px;
 }
+
+#submit-affiliates{
+  margin-top: 20px;
+  padding: 10px 100px;
+}
