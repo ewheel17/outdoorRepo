@@ -12,26 +12,69 @@ var Tawk_API = Tawk_API || {},
 })();
 
 //First-time Modal
-$(document).ready(function() {
+function setUpDash(){
   var firstTime = localStorage.getItem('firstTime');
   if (firstTime != 1) {
-    var modal = UIkit.modal('#welcome-modal')
-    modal.show();
-    localStorage.setItem('firstTime', 1);
+
   }
-});
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function checkCookie() {
+    var firstTime = getCookie("firstTime");
+    if (firstTime != "") {
+    } else {
+      var modal = UIkit.modal('#welcome-modal')
+      modal.show();
+      setCookie("firstTime", 1);
+    }
+}
 
   //Launch Set Up on Dash Login
 function setUpDash(){
-  $(document).ready(function() {
-        var modal = UIkit.modal('#setup-modal');
-            modal.show();
-});
+  var setupProfile;
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      var userId = firebase.auth().currentUser.uid;
+        firebase.database().ref('/users/' + userId + '/setupProfile/').once('value').then(function(snapshot){
+        setupProfile = (snapshot.val());
+        if (setupProfile === null) {
+          var modal = UIkit.modal('#setup-modal')
+          modal.show();
+        }
+        });
+    } else {
+      // No user is signed in.
+    }
+  });
+};
 
 
 //Log info to database on submit
 $("#finished-setup").on("click", function(event) {
-  event.preventDefault();
+  location.reload();
   userName = firebase.auth().currentUser.displayName;
   userId = firebase.auth().currentUser.uid;
   preferredName = $("#preferred-name").val().trim();
@@ -79,13 +122,14 @@ $("#finished-setup").on("click", function(event) {
     themeChoice: theme,
     charityChoice: charity,
     sportChoice: sports,
+    setupProfile: 1,
   });
 
   getUserProfile();
   var modal = UIkit.modal('#setup-modal');
     modal.hide();
 });
-}
+
 
 
 //Extract from Firebase and Display in DOM
