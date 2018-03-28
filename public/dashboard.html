@@ -10,6 +10,16 @@
 
   <title>outdoorRepo</title>
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116544559-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-116544559-1');
+  </script>
+
   <!-- Google Fonts API -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
@@ -50,7 +60,9 @@
       <div class="uk-text-center dash-one" uk-grid>
 
         <h1 id="welcome"></h1>
-        <p>Your charity donations: <strong>${dollars}</strong></p>
+        <p>Your charity donations:
+          <strong>${dollars}</strong>
+        </p>
         <p>Don't forget to stuff your cookie jar so you can keep on donating.</p>
         <button id="cookie-stuff" class="uk-button uk-button-primary" type="button">give me all the cookies</button>
       </div>
@@ -65,19 +77,22 @@
           <div>
             <div class="uk-card uk-card-default uk-card-body">
               <h3>Product #1</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
+                bibendum eget ac neque.</p>
             </div>
           </div>
           <div>
             <div class="uk-card uk-card-default uk-card-body">
               <h3>Product #2</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
+                bibendum eget ac neque.</p>
             </div>
           </div>
           <div>
             <div class="uk-card uk-card-default uk-card-body">
               <h3>Product #3</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
+                bibendum eget ac neque.</p>
             </div>
           </div>
         </div>
@@ -87,19 +102,22 @@
           <div>
             <div class="uk-card uk-card-default uk-card-body">
               <h3>Product #4</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
+                bibendum eget ac neque.</p>
             </div>
           </div>
           <div>
             <div class="uk-card uk-card-default uk-card-body">
               <h3>Product #5</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
+                bibendum eget ac neque.</p>
             </div>
           </div>
           <div>
             <div class="uk-card uk-card-default uk-card-body">
               <h3>Product #6</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
+                bibendum eget ac neque.</p>
             </div>
           </div>
         </div>
@@ -187,36 +205,46 @@
             <h2>It looks like you just logged in for the first time. Congrats!</h2>
             <p>We'd like to help you get your user dashboard set up!</p>
 
-            <h3> What should we call you? <h3>
-            <input class="uk-input" id="preferred-name">
+            <h3> What should we call you?
+              <h3>
+                <input class="uk-input" id="preferred-name">
 
-            <h3>Which theme would you like to enable?</h3>
-            <div class="uk-form-controls uk-form-controls-text">
-              <p><input class="uk-radio" type="radio" name="theme" id="light-theme"> Light Theme</p>
-              <p><input class="uk-radio" type="radio" name="theme" id="dark-theme"> Dark Theme</p>
-            </div>
+                <h3>Which theme would you like to enable?</h3>
+                <div class="uk-form-controls uk-form-controls-text">
+                  <p>
+                    <input class="uk-radio" type="radio" name="theme" id="light-theme"> Light Theme</p>
+                  <p>
+                    <input class="uk-radio" type="radio" name="theme" id="dark-theme"> Dark Theme</p>
+                </div>
 
-            <div class="uk-grid-small" uik-grid>
-              <h3>What do you like to buy?</h3>
-              <div class="uk-width-1-4@s">
-                <p> <input class="uk-checkbox" value="hiking" id="hiking" type="checkbox"> Hiking Gear</p>
-              </div>
-              <div class="uk-width-1-4@s">
-                <p> <input class="uk-checkbox" value="cycling" id="cycling" type="checkbox"> Cycling Gear</p>
-              </div>
-              <div class="uk-width-1-4@s">
-                <p> <input class="uk-checkbox" value="snow-sports" id="snow-sports" type="checkbox"> Snow Sports</p>
-              </div>
-              <div class="uk-width-1-4@s">
-                <p> <input class="uk-checkbox" value="gen-fitness" id="general-fitness" type="checkbox"> General Fitness</p>
-              </div>
-            </div>
+                <div class="uk-grid-small" uik-grid>
+                  <h3>What do you like to buy?</h3>
+                  <div class="uk-width-1-4@s">
+                    <p>
+                      <input class="uk-checkbox" value="hiking" id="hiking" type="checkbox"> Hiking Gear</p>
+                  </div>
+                  <div class="uk-width-1-4@s">
+                    <p>
+                      <input class="uk-checkbox" value="cycling" id="cycling" type="checkbox"> Cycling Gear</p>
+                  </div>
+                  <div class="uk-width-1-4@s">
+                    <p>
+                      <input class="uk-checkbox" value="snow-sports" id="snow-sports" type="checkbox"> Snow Sports</p>
+                  </div>
+                  <div class="uk-width-1-4@s">
+                    <p>
+                      <input class="uk-checkbox" value="gen-fitness" id="general-fitness" type="checkbox"> General Fitness</p>
+                  </div>
+                </div>
 
-            <h3>Which charity would you like to contribute to?</h3>
-            <p><input class="uk-radio" value="water" name="charity" type="radio" id="water"> Water.org</p>
-            <p><input class="uk-radio" value="sierra" name="charity" type="radio" id="sierra"> SierraClubFoundation.org</p>
-            <p><input class="uk-radio" value="ocean" name="charity" type="radio" id="ocean"> OceanConservancy.org</p>
-            <a type="button" class="uk-button uk-button-default" id="finished-setup" uk-toggle>Submit</a>
+                <h3>Which charity would you like to contribute to?</h3>
+                <p>
+                  <input class="uk-radio" value="water" name="charity" type="radio" id="water"> Water.org</p>
+                <p>
+                  <input class="uk-radio" value="sierra" name="charity" type="radio" id="sierra"> SierraClubFoundation.org</p>
+                <p>
+                  <input class="uk-radio" value="ocean" name="charity" type="radio" id="ocean"> OceanConservancy.org</p>
+                <a type="button" class="uk-button uk-button-default" id="finished-setup" uk-toggle>Submit</a>
         </div>
       </div>
     </div>
@@ -226,13 +254,15 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
     <script src="assets/app.js"></script>
 
 
     <script>
+
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyAM-t2CaMxXwb_HMZaqs-QHaGe1KETwmUM",
@@ -258,17 +288,18 @@
         }
       });
     }
+
     </script>
 
     <script>
-    //Logout Script
-      $("#logout").on("click", function() {
-        firebase.auth().signOut().then(function() {
+      //Logout Script
+      $("#logout").on("click", function () {
+        firebase.auth().signOut().then(function () {
           // Sign-out successful.
           localStorage.clear();
           window.location.href = "index.html";
-        }, function(error) {
-        	console.log(error);
+        }, function (error) {
+          console.log(error);
         });
       });
     </script>
@@ -276,13 +307,13 @@
 
     <script>
 
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-              getUserProfile();
-      } else {
-        // No user is signed in.
-      }
-    });
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          getUserProfile();
+        } else {
+          // No user is signed in.
+        }
+      });
 
     </script>
 
