@@ -55,12 +55,9 @@
           </div>
         </nav>
 
-      <div class="uk-text-center dash-one" uk-grid>
+      <div class="uk-text-center dash-greeting" uk-grid>
 
         <h1 id="welcome"></h1>
-        <p>Your charity donations:
-          <strong>${dollars}</strong>
-        </p>
         <p>Don't forget to stuff your cookie jar so you can keep on donating.</p>
         <button id="cookie-stuff" class="uk-button uk-button-primary" type="button">give me all the cookies</button>
       </div>
@@ -68,66 +65,81 @@
 
     <main>
 
-      <div class="uk-container uk-container-expand dash-two">
+      <div class="dash-charity uk-text-center uk-container uk-container-expand">
+        <h1>Where You're Donations Are Going</h1>
+        <img id="charity-logo">
+        <h3 id="display-charity"></h3>
+        <p id="charity-description"></p>
+        <a class="uk-button uk-button-primary" href="#change-charity" uk-toggle>Change my Charity</a>
+      </div>
+
+
+      <div class="uk-container uk-container-expand dash-affiliates">
         <h1>Your Shopping Destinations</h1>
         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
 
           <div>
             <div class="uk-card uk-card-default uk-card-body">
-              <h3>Product #1</h3>
+              <h3>Affiliate #1</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
                 bibendum eget ac neque.</p>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-body">
+              <h3>Affiliate #2</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
+                bibendum eget ac neque.</p>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-body">
+              <h3>Affiliate #3</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
+                bibendum eget ac neque.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="uk-container uk-container-expand dash-products">
+        <h1>Recommendations for You</h1>
+        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+
+          <div>
+            <div class="uk-card uk-card-default uk-card-body">
+              <h3>Product #1</h3>
+              <img src="http://via.placeholder.com/200x140">
             </div>
           </div>
           <div>
             <div class="uk-card uk-card-default uk-card-body">
               <h3>Product #2</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-                bibendum eget ac neque.</p>
+              <img src="http://via.placeholder.com/200x140">
             </div>
           </div>
           <div>
             <div class="uk-card uk-card-default uk-card-body">
               <h3>Product #3</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-                bibendum eget ac neque.</p>
+              <img src="http://via.placeholder.com/200x140">
             </div>
           </div>
-        </div>
-
-        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-
           <div>
             <div class="uk-card uk-card-default uk-card-body">
-              <h3>Product #4</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-                bibendum eget ac neque.</p>
+              <h3>Product #43</h3>
+              <img src="http://via.placeholder.com/200x140">
             </div>
           </div>
           <div>
             <div class="uk-card uk-card-default uk-card-body">
               <h3>Product #5</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-                bibendum eget ac neque.</p>
-            </div>
-          </div>
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3>Product #6</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-                bibendum eget ac neque.</p>
+              <img src="http://via.placeholder.com/200x140">
             </div>
           </div>
         </div>
+
       </div>
 
-      <div class="dash-three uk-text-center uk-container uk-container-expand">
-        <h2>Your Donations</h2>
-        <img id="charity-logo">
-        <h3 id="display-charity"></h3>
-        <p id="charity-description"></p>
-        <a class="uk-button uk-button-primary" href="settings.html" type="button">Change my Charity</a>
-      </div>
     </main>
 
     <footer>
@@ -190,13 +202,27 @@
       </div>
     </div>
 
+    <!--Charity Choice-->
+    <div id="change-charity" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <h3>Change Charity</h3>
+            <p>
+              <img src="assets/images/water.png"><input class="uk-radio" value="water" name="charity" type="radio" id="new-water"> Water.org</p>
+            <p>
+              <img src="assets/images/sierra-club.png"><input class="uk-radio" value="sierra" name="charity" type="radio" id="new-sierra"> SierraClubFoundation.org</p>
+            <p>
+              <img src="assets/images/ocean-conservancy.png"><input class="uk-radio" value="ocean" name="charity" type="radio" id="new-ocean"> OceanConservancy.org</p>
+            <a type="button" class="uk-button uk-button-primary" id="commit-charity-change" uk-toggle>Submit</a>
+        </div>
+    </div>
+
+
     <!--Account Setup Modal -->
     <div id="setup-modal" class="uk-flex-top" uk-modal>
 
       <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
         <div id="setup-modal-text">
-          <button class="uk-modal-close-default" type="button" uk-close></button>
-
 
             <h2>It looks like you just logged in for the first time. Congrats!</h2>
             <p>We'd like to help you get your user dashboard set up!</p>
@@ -213,7 +239,6 @@
                     <input class="uk-radio" type="radio" name="theme" id="dark-theme"> Dark Theme</p>
                 </div>
 
-                <div class="uk-grid-small" uik-grid>
                   <h3>What do you like to buy?</h3>
                   <div class="uk-width-1-4@s">
                     <p>
@@ -231,15 +256,14 @@
                     <p>
                       <input class="uk-checkbox" value="General Fitness" id="general-fitness" type="checkbox"> General Fitness</p>
                   </div>
-                </div>
 
                 <h3>Which charity would you like to contribute to?</h3>
                 <p>
-                  <input class="uk-radio" value="water" name="charity" type="radio" id="water"> Water.org</p>
+                  <img src="assets/images/water.png"><input class="uk-radio" value="water" name="charity" type="radio" id="water"> Water.org</p>
                 <p>
-                  <input class="uk-radio" value="sierra" name="charity" type="radio" id="sierra"> SierraClubFoundation.org</p>
+                  <img src="assets/images/sierra-club.png"><input class="uk-radio" value="sierra" name="charity" type="radio" id="sierra"> SierraClubFoundation.org</p>
                 <p>
-                  <input class="uk-radio" value="ocean" name="charity" type="radio" id="ocean"> OceanConservancy.org</p>
+                  <img src="assets/images/ocean-conservancy.png"><input class="uk-radio" value="ocean" name="charity" type="radio" id="ocean"> OceanConservancy.org</p>
                 <a type="button" class="uk-button uk-button-default" id="finished-setup" uk-toggle>Submit</a>
         </div>
       </div>
@@ -292,8 +316,7 @@
       $("#logout").on("click", function () {
         firebase.auth().signOut().then(function () {
           // Sign-out successful.
-          localStorage.clear();
-          window.location.href = "index.html";
+          localStorage.clear(); window.location.href = "index.html";
         }, function (error) {
           console.log(error);
         });
