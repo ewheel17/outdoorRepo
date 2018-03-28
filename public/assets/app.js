@@ -333,3 +333,49 @@ $("#delete").click(function() {
 
   });
 })
+
+
+//Add Affiliates
+
+$("#submit-affiliates").on("click", function(event) {
+  var cabelas = $("#add-cabelas").val().trim();
+  var marmot = $("#add-marmot").val().trim();
+  var rei = $("#add-rei").val().trim();
+  var deuter = $("#add-deuter").val().trim();
+  var backcountry = $("#add-backcountry").val().trim();
+  var patagonia = $("#add-patagonia").val().trim();
+  var mountainHardware = $("#add-mountain").val().trim();
+  var amazon = $("#add-amazon").val().trim();
+  var activeAffiliates = [];
+
+
+  if ($('#add-cabelas').is(':checked')) {
+    activeAffiliates.push(cabelas);
+  };
+  if ($('#add-marmot').is(':checked')) {
+    activeAffiliates.push(marmot);
+  };
+  if ($('#add-rei').is(':checked')) {
+    activeAffiliates.push(rei);
+  };
+  if ($('#add-deuter').is(':checked')) {
+    activeAffiliates.push(deuter);
+  };
+  if ($('#add-backcountry').is(':checked')) {
+    activeAffiliates.push(backcountry);
+  };
+  if ($('#add-patagonia').is(':checked')) {
+    activeAffiliates.push(patagonia);
+  };
+  if ($('#add-mountain').is(':checked')) {
+    activeAffiliates.push(mountainHardware);
+  };
+  if ($('#add-amazon').is(':checked')) {
+    activeAffiliates.push(amazon);
+  };
+
+  var userId = firebase.auth().currentUser.uid;
+  var userProfile = database.ref('users/' + userId).update({
+    activeAffiliates: activeAffiliates
+  });
+});
