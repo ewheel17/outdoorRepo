@@ -264,98 +264,34 @@ hr {
 
 /*****************************/
 
-.login {
-  margin-top: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+.mdl-button{
+  box-shadow: none;
+  padding: 20px 70px;
 }
 
-.login .btn-primary {
-  margin: 20px 0;
+.firebaseui-idp-button{
+  max-width: 700px !important;
+  border: 1px solid #36c584;
 }
 
 .login h1 {
-  font-size: 24px !important;
+  font-size: 48px !important;
   font-family: "Montserrat", sans-serif;
   font-weight: 100 !important;
   color: #36c584;
+  padding-bottom: 30px;
 }
 
-.firebaseui-textfield.mdl-textfield .firebaseui-input {
-  padding: 5px;
-  font-family: "Montserrat", sans-serif;
-}
-
-.mdl-card {
-  border: none !important;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.mdl-button--primary.mdl-button--primary {
-  color: #3ddb93;
-}
-
-.btn-primary, .firebaseui-idp-password, .mdl-button--raised.mdl-button--colored {
-  background-color: #fff;
-  color: #000;
-  border: 2px solid #3ddb93;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.btn-primary:hover, .firebaseui-idp-password:hover, .mdl-button--raised.mdl-button--colored:hover {
-  background-color: #36c584;
-  border: 1px solid #36c584;
-  color: #fff;
-  -webkit-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.btn-primary:active, .firebaseui-idp-password:active, .mdl-button--raised.mdl-button--colored:active {
-  background-color: #36c584 !important;
-  border: 1px solid #36c584 !important;
-  -webkit-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.login input[type=password], input[type=email] {
-  border: none !important;
-  border-bottom: 2px solid #36c584 !important;
-}
-
-.login h1 {
-  margin: 0;
-  font-size: 60px;
+.login-page{
+  height: calc(100vh - 120px);
+  background-color: #f4f4f4;
 }
 
 .login-icon {
   display: block;
   color: #54b5ff;
-  font-size: 60px;
+  font-size: 100px;
   text-align: center !important;
-}
-
-.login-box {
-  border: 2px solid #36c584;
-  border-radius: 2px;
 }
 
 .flat-icon {
