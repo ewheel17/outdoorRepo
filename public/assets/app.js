@@ -76,6 +76,7 @@ function setUpDash(){
 $("#finished-setup").on("click", function(event) {
   location.reload();
   userName = firebase.auth().currentUser.displayName;
+  userEmail = firebase.auth().currentUser.email;
   userId = firebase.auth().currentUser.uid;
   preferredName = $("#preferred-name").val().trim();
 
@@ -113,11 +114,12 @@ $("#finished-setup").on("click", function(event) {
       charity = "Sierra";
     } else if ($('#ocean').is(':checked')) {
       charity = "Ocean";
-  };
+    };
 
   // Save new value to Firebase
   var userProfile = database.ref('users/' + userId).set({
     userName: userName,
+    userEmail: userEmail,
     preferredName: preferredName,
     themeChoice: theme,
     charityChoice: charity,
@@ -180,9 +182,6 @@ function getUserProfile(){
 function userSettings(){
   var userId = firebase.auth().currentUser.uid;
 
-  var email = firebase.auth().currentUser.email;
-  document.getElementById('settings-email').innerHTML = email;
-
   firebase.database().ref('/users/' + userId + '/charityChoice/').once('value').then(function(snapshot){
     chosenCharity = (snapshot.val());
     console.log('Chosen charity: ' + chosenCharity);
@@ -196,6 +195,11 @@ function userSettings(){
     } else {
       document.getElementById('display-charity').innerHTML = 'You are not currently sending your donations anywhere!';
     }
+  });
+
+  firebase.database().ref('/users/' + userId + '/userEmail/').once('value').then(function(snapshot){
+    userEmail = (snapshot.val());
+    document.getElementById('settings-email').innerHTML = userEmail;
   });
 
   firebase.database().ref('/users/' + userId + '/preferredName/').once('value').then(function(snapshot){
@@ -214,13 +218,95 @@ function userSettings(){
   });
 }
 
-// $("#commit-name-change").on("click", function(event) {
-//     var preferredName = $("#change-preferred-name").val().trim();
-//     var userId = firebase.auth().currentUser.uid;
-//     var userProfile = database.ref('users/' + userId).set({
-//     preferredName: preferredName
-//     });
-//
-//     var modal = UIkit.modal('#change-name');
-//       modal.hide();
-// });
+$("#commit-name-change").on("click", function(event) {
+    var preferredName = $("#change-preferred-name").val().trim();
+    var userId = firebase.auth().currentUser.uid;
+    var userProfile = database.ref('users/' + userId).update({
+    preferredName: preferredName
+    });
+
+    var modal = UIkit.modal('#change-name');
+      modal.hide();
+      location.reload();
+});
+
+$("#commit-email-change").on("click", function(event) {
+    var userEmail = $("#change-user-email").val().trim();
+    var userId = firebase.auth().currentUser.uid;
+    var userProfile = database.ref('users/' + userId).update({
+    userEmail: userEmail
+    });
+
+    var modal = UIkit.modal('#change-email');
+      modal.hide();
+      location.reload();
+});
+
+$("#commit-charity-change").on("click", function(event) {
+      var charity;
+      if ($('#new-water').is(':checked')) {
+        charity = "Water";
+      };
+      if ($('#new-sierra').is(':checked')) {
+        charity = "Sierra";
+      } else if ($('#new-ocean').is(':checked')) {
+        charity = "Ocean";
+      };
+
+    var userId = firebase.auth().currentUser.uid;
+    var userProfile = database.ref('users/' + userId).update({
+    charityChoice: charity
+    });
+
+    var modal = UIkit.modal('#change-charity');
+      modal.hide();
+      location.reload();
+});
+
+$("#commit-theme-change").on("click", function(event) {
+    var theme;
+      if ($('#-new-dark-theme').is(':checked')) {
+        theme = "Dark Theme"
+        } else {
+        theme = "Light Theme"
+      };
+
+    var userId = firebase.auth().currentUser.uid;
+    var userProfile = database.ref('users/' + userId).update({
+    themeChoice: theme
+    });
+
+    var modal = UIkit.modal('#change-theme');
+      modal.hide();
+      location.reload();
+});
+
+
+$("#commit-purchase-change").on("click", function(event) {
+  var sportOne = $("#new-hiking").val().trim();
+  var sportTwo = $("#new-cycling").val().trim();
+  var sportThree = $("#new-snow-sports").val().trim();
+  var sportFour = $("#new-general-fitness").val().trim();
+  var sports = [];
+  if ($('#new-hiking').is(':checked')) {
+    sports.push(sportOne);
+  };
+  if ($('#new-cycling').is(':checked')) {
+    sports.push(sportTwo);
+  };
+  if ($('#new-snow-sports').is(':checked')) {
+    sports.push(sportThree);
+  };
+  if ($('#new-general-fitness').is(':checked')) {
+    sports.push(sportFour);
+  };
+
+    var userId = firebase.auth().currentUser.uid;
+    var userProfile = database.ref('users/' + userId).update({
+    sportChoice: sports
+    });
+
+    var modal = UIkit.modal('#change-purchase-preferences');
+      modal.hide();
+      location.reload();
+});

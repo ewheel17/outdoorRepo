@@ -335,6 +335,10 @@ hr{
   text-align: center !important;
 }
 
+.login-box{
+  border: 2px solid #36c584;
+  border-radius: 2px;
+}
 .flat-icon {
   height: 150px;
   margin: 30px auto;
