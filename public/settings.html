@@ -76,7 +76,7 @@
       <div class="uk-text-center">
         <h1> Settings </h1>
       </div>
-      <h4> Preferred Name <a class="uk-button uk-button-info" href="#">Edit</a> </h4>
+      <h4> Preferred Name <a class="uk-button uk-button-info" href="#change-name" uk-toggle>Edit</a> </h4>
 
       <div>
         <p id="settings-preferred-name">
@@ -84,25 +84,25 @@
       </div>
 
 
-      <h4> Email Address <a class="uk-button uk-button-info" href="#">Edit</a>  </h4>
+      <h4> Email Address </h4>
       <div>
         <p id="settings-email">
         </p>
       </div>
 
-      <h4> Purchase Preferences <a class="uk-button uk-button-info" href="#">Edit</a> </h4>
+      <h4> Purchase Preferences <a class="uk-button uk-button-info" href="#change-purchase-preferences" uk-toggle>Edit</a> </h4>
       <div>
         <p id="settings-purchase-preferences">
         </p>
       </div>
 
-      <h4> Theme <a class="uk-button uk-button-info" href="#">Edit</a> </h4>
+      <h4> Theme <a class="uk-button uk-button-info" href="#change-theme" uk-toggle>Edit</a> </h4>
       <div>
         <p id="settings-theme">
         </p>
       </div>
 
-      <h4> Charity Choice <a class="uk-button uk-button-info" href="#">Edit</a> </h4>
+      <h4> Charity Choice <a class="uk-button uk-button-info" href="#change-charity" uk-toggle>Edit</a> </h4>
       <div>
         <p id="settings-charity">
         </p>
@@ -140,18 +140,44 @@
 
   <!--Change Preferred Name-->
 
-
-  <!--Change Email-->
-
+    <div id="change-name" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <h3>Change Preferred Name</h3>
+            <input class="uk-input" id="change-preferred-name">
+            <a type="button" class="uk-button uk-button-primary" id="commit-name-change" uk-toggle>Submit</a>
+        </div>
+    </div>
 
   <!--Change Purchase Preferences-->
-
+  <div id="change-purchase-preferences" class="uk-flex-top" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+          <button class="uk-modal-close-default" type="button" uk-close></button>
+          <h3>Change Purchase Preferences</h3>
+          <input class="uk-input" id="preferred-name">
+          <a type="button" class="uk-button uk-button-primary" id="commit-purchase-change" uk-toggle>Submit</a>
+      </div>
+  </div>
 
   <!--Theme-->
-
+  <div id="change-theme" class="uk-flex-top" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+          <button class="uk-modal-close-default" type="button" uk-close></button>
+          <h3>Change Theme</h3>
+          <input class="uk-input" id="preferred-name">
+          <a type="button" class="uk-button uk-button-primary" id="commit-theme-change" uk-toggle>Submit</a>
+      </div>
+  </div>
 
   <!--Charity Choice-->
-
+  <div id="change-charity" class="uk-flex-top" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+          <button class="uk-modal-close-default" type="button" uk-close></button>
+          <h3>Change Charity</h3>
+          <input class="uk-input" id="preferred-name">
+          <a type="button" class="uk-button uk-button-primary" id="commit-charity-change" uk-toggle>Submit</a>
+      </div>
+  </div>
 
 
 

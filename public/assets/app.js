@@ -179,6 +179,10 @@ function getUserProfile(){
 
 function userSettings(){
   var userId = firebase.auth().currentUser.uid;
+
+  var email = firebase.auth().currentUser.email;
+  document.getElementById('settings-email').innerHTML = email;
+
   firebase.database().ref('/users/' + userId + '/charityChoice/').once('value').then(function(snapshot){
     chosenCharity = (snapshot.val());
     console.log('Chosen charity: ' + chosenCharity);
@@ -209,3 +213,14 @@ function userSettings(){
     document.getElementById('settings-purchase-preferences').innerHTML = thingChoice;
   });
 }
+
+// $("#commit-name-change").on("click", function(event) {
+//     var preferredName = $("#change-preferred-name").val().trim();
+//     var userId = firebase.auth().currentUser.uid;
+//     var userProfile = database.ref('users/' + userId).set({
+//     preferredName: preferredName
+//     });
+//
+//     var modal = UIkit.modal('#change-name');
+//       modal.hide();
+// });
