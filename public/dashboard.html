@@ -42,8 +42,7 @@
 
   <body onload="setUpDash()">
     <header>
-      <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-        <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-container" uk-navbar>
           <div class="uk-navbar-left">
             <img src="assets/images/logo.png" class="uk-navbar-item uk-logo">
           </div>
@@ -61,8 +60,7 @@
               <a class="uk-button uk-button-primary" id="logout">Logout</a>
             </div>
           </div>
-        </nav>
-      </div>
+        </div>
 
       <div class="uk-text-center dash-one" uk-grid>
 
@@ -238,7 +236,41 @@
       </div>
     </div>
 
-
+    <!-- FAQ modal -->
+    <div id="faq-modal" class="uk-flex-top" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+  
+        <button class="uk-modal-close-outside" type="button" uk-close></button>
+  
+        <ul uk-accordion>
+          <li class="uk-open">
+            <a class="uk-accordion-title" href="#">What is OutdoorRepo?</a>
+            <div class="uk-accordion-content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </li>
+          <li>
+            <a class="uk-accordion-title" href="#">How does it work?</a>
+            <div class="uk-accordion-content">
+              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
+            </div>
+          </li>
+          <li>
+            <a class="uk-accordion-title" href="#">How do my purchases benefit charities?</a>
+            <div class="uk-accordion-content">
+              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
+            </div>
+          </li>
+          <li>
+            <a class="uk-accordion-title" href="#">How do I sign up?</a>
+            <div class="uk-accordion-content">
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+            </div>
+          </li>
+        </ul>
+  
+      </div>
+    </div>
 
 
     <!-- Scripts -->
