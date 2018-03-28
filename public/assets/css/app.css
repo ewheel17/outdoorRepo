@@ -331,3 +331,10 @@ hr{
   height: 150px;
   margin: 30px auto;
 }
+
+#change-name .uk-button-primary,
+#change-theme .uk-button-primary,
+#change-charity .uk-button-primary,
+#change-purchase-preferences .uk-button-primary{
+  margin-top: 5px;
+}
