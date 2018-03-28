@@ -141,6 +141,10 @@ hr{
   max-height: 300px;
 }
 
+.settings-one h4{
+  margin-bottom: 0 !important;
+}
+
 /* Dashboard */
 .dash-one {
   padding: 80px 50px !important;

@@ -33,23 +33,6 @@
   <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css">
 
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyAM-t2CaMxXwb_HMZaqs-QHaGe1KETwmUM",
-      authDomain: "outdoorrepo-e22c5.firebaseapp.com",
-      databaseURL: "https://outdoorrepo-e22c5.firebaseio.com",
-      projectId: "outdoorrepo-e22c5",
-      storageBucket: "outdoorrepo-e22c5.appspot.com",
-      messagingSenderId: "565862631025"
-    };
-    firebase.initializeApp(config);
-
-    var database = firebase.database();
-
-  </script>
-
-
   <body onload="setUpDash()">
     <header>
       <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
@@ -59,7 +42,7 @@
           </div>
           <div class="uk-navbar-right">
             <div class="uk-navbar-item">
-              <a class="uk-button uk-button-default" href="" uk-toggle>Add Affiliates</a>
+              <a class="uk-button uk-button-default" href="search.html" uk-toggle>Add Affiliates</a>
             </div>
             <div class="uk-navbar-item">
               <a class="uk-button uk-button-default" href="settings.html" id="user-settings">My Account </a>
@@ -279,18 +262,33 @@
 
 
     <script>
+
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAM-t2CaMxXwb_HMZaqs-QHaGe1KETwmUM",
+        authDomain: "outdoorrepo-e22c5.firebaseapp.com",
+        databaseURL: "https://outdoorrepo-e22c5.firebaseio.com",
+        projectId: "outdoorrepo-e22c5",
+        storageBucket: "outdoorrepo-e22c5.appspot.com",
+        messagingSenderId: "565862631025"
+      };
+      firebase.initializeApp(config);
+
+      var database = firebase.database();
+
       //Auth Check & User Log
       var pathname = window.location.pathname;
 
-      if (pathname == "/dashboard.html") {
-        firebase.auth().onAuthStateChanged(function (user) {
-          console.log('authStateChanged', user);
-          if (user) {
-          } else {
-            window.location.replace("../index.html");
-          }
-        });
-      }
+    if (pathname == "/dashboard.html") {
+      firebase.auth().onAuthStateChanged(function(user) {
+        console.log('authStateChanged', user);
+        if (user) {
+        } else {
+          window.location.replace("../index.html");
+        }
+      });
+    }
+
     </script>
 
     <script>
