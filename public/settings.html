@@ -10,6 +10,16 @@
 
   <title>outdoorRepo</title>
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116544559-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-116544559-1');
+  </script>
+
   <!-- Google Fonts API -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
@@ -25,15 +35,15 @@
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.css" />
 
   <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAM-t2CaMxXwb_HMZaqs-QHaGe1KETwmUM",
-    authDomain: "outdoorrepo-e22c5.firebaseapp.com",
-    databaseURL: "https://outdoorrepo-e22c5.firebaseio.com",
-    projectId: "outdoorrepo-e22c5",
-    storageBucket: "outdoorrepo-e22c5.appspot.com",
-    messagingSenderId: "565862631025"
-  };
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAM-t2CaMxXwb_HMZaqs-QHaGe1KETwmUM",
+      authDomain: "outdoorrepo-e22c5.firebaseapp.com",
+      databaseURL: "https://outdoorrepo-e22c5.firebaseio.com",
+      projectId: "outdoorrepo-e22c5",
+      storageBucket: "outdoorrepo-e22c5.appspot.com",
+      messagingSenderId: "565862631025"
+    };
     firebase.initializeApp(config);
 
     var database = firebase.database();
@@ -172,34 +182,35 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
   <script src="assets/app.js"></script>
 
   <script>
-  //Auth Check & User Log
-  var pathname = window.location.pathname;
+    //Auth Check & User Log
+    var pathname = window.location.pathname;
 
-  if (pathname == "/settings.html") {
-    firebase.auth().onAuthStateChanged(function(user) {
-      console.log('authStateChanged', user);
-      if (user) {
-      } else {
-        window.location.replace("../index.html");
-      }
-    });
-  }
+    if (pathname == "/settings.html") {
+      firebase.auth().onAuthStateChanged(function (user) {
+        console.log('authStateChanged', user);
+        if (user) {
+        } else {
+          window.location.replace("../index.html");
+        }
+      });
+    }
   </script>
 
   <script>
-  //Logout Script
-    $("#logout").on("click", function() {
-      firebase.auth().signOut().then(function() {
+    //Logout Script
+    $("#logout").on("click", function () {
+      firebase.auth().signOut().then(function () {
         // Sign-out successful.
         localStorage.clear();
         window.location.href = "index.html";
-      }, function(error) {
+      }, function (error) {
         console.log(error);
       });
     });
@@ -207,13 +218,13 @@
 
   <script>
 
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-    userSettings();
-    } else {
-      // No user is signed in.
-    }
-  });
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        userSettings();
+      } else {
+        // No user is signed in.
+      }
+    });
 
 
   </script>
