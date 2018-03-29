@@ -264,10 +264,10 @@ $("#commit-charity-change").on("click", function(event) {
 
 $("#commit-theme-change").on("click", function(event) {
   var theme;
-  if ($('#-new-dark-theme').is(':checked')) {
-    theme = "Dark Theme"
-  } else {
-    theme = "Light Theme"
+  if ($('#new-dark-theme').is(':checked')) {
+    theme = "Dark Theme";
+  } else if($('#new-light-theme').is(':checked')){
+    theme = "Light Theme";
   };
 
   var userId = firebase.auth().currentUser.uid;
@@ -425,21 +425,26 @@ function displayAffiliates(){
       }
 
       $("#no-affiliates").fadeOut();
-      $("#affiliate-grid").append("<div class='uk-width-1-4@m'><div class='uk-card uk-card-default uk-card-body'><h3>" + activeAffiliates[i] +
+      $("#affiliate-grid").append("<div class='uk-width-1-5@l'><div class='uk-card uk-card-default uk-card-body'><h3>" + activeAffiliates[i] +
       "</h3><img src='" + affiliateImage + "'></div></div>");
     }
   });
 }
 
 
-//
-// //
-// // $("#affiliate-grid").append()
-// // //
-// // // <div>
-// // //   <div class="uk-card uk-card-default uk-card-body">
-// // //     <h3>Affiliate #1</h3>
-// // //     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis
-// // //       bibendum eget ac neque.</p>
-// // //   </div>
-// // // </div>
+
+function setTheme(){
+    var userId = firebase.auth().currentUser.uid;
+
+    firebase.database().ref('/users/' + userId + '/themeChoice/').once('value').then(function(snapshot) {
+      chosenTheme = (snapshot.val());
+            console.log(chosenTheme); //logs theme correctly
+
+      if (chosenTheme == "Dark Theme"){
+        $("#theme-choice").attr("href","assets/css/app-dark.css");
+      } else {
+        $("#theme-choice").attr("href","assets/css/app.css");
+      }
+
+    });
+}

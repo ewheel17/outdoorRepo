@@ -33,7 +33,7 @@
 
   <!-- Custom styles for this template -->
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/app.css" id="theme-choice"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css">
 
   <body onload="setUpDash()">
@@ -54,7 +54,7 @@
     </header>
 
     <main>
-      <div class="uk-container uk-container-expand section-one">
+      <div class="uk-container uk-container-expand settings-one">
 
         <div class="uk-text-center">
           <h1> Available Affiliates </h1>
@@ -272,6 +272,18 @@
         	console.log(error);
         });
       });
+    </script>
+
+    <script>
+
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          setTheme()
+        } else {
+          // No user is signed in.
+        }
+      });
+
     </script>
   </body>
 </html>

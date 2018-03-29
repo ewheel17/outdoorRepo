@@ -1,0 +1,350 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+footer {
+  background-color: #eee;
+}
+
+h1{
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 300 !important;
+  color: #e5e5e5 !important;
+}
+
+p{
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 300;
+}
+
+#charity-logo {
+  max-height: 250px;
+}
+
+.uk-button-primary{
+  background-color: #155ea8 !important;
+  color: #e5e5e5;
+}
+.uk-navbar {
+  padding: 10px;
+  background-color: #999 !important;
+  border-top: 10px solid #248358;
+  height: 180px;
+}
+
+.uk-navbar-container .uk-navbar-left img {
+  margin-top: 25px;
+  height: 250px;
+}
+
+.uk-navbar-right .uk-navbar-item a {
+  margin-top: -115px;
+}
+
+.uk-button-default {
+  border: 1px solid #1e87f0;
+}
+
+.section-one {
+  padding: 80px 50px !important;
+  min-height: 400px;
+  background-color: #f4f4f4;
+  align-items: center;
+}
+
+.section-one img, .section-two img {
+  max-height: 300px;
+}
+
+.section-two {
+  padding: 100px 50px !important;
+  min-height: 400px;
+  background-color: #eee;
+  align-items: center;
+}
+
+.section-three {
+  padding: 100px 50px 50px 50px !important;
+}
+
+.section-three h3 {
+  margin-top: -20px;
+  margin-bottom: 50px;
+}
+
+.section-three a:hover {
+  text-decoration: none;
+}
+
+.section-three h3:hover {
+  color: #3ddb93 !important;
+  transition-duration: 0.3s;
+}
+
+.section-four {
+  padding: 80px 100px !important;
+  background-color: #fff;
+}
+
+.section-four img {
+  padding: 40px;
+}
+
+.section-four h4 {
+  text-transform: uppercase;
+  color: #1e87f0;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+hr {
+  margin: 0 auto !important;
+  max-width: 80%;
+}
+
+.section-five {
+  background-color: #3ddb93;
+  padding: 100px 50px 10px 50px !important;
+}
+
+.section-five h1, .section-five h3 {
+  color: #fff ;
+  font-weight: 300;
+}
+
+.section-five h3 {
+  margin-top: -20px;
+}
+
+.section-five img {
+  max-height: 200px;
+}
+
+.uk-card{
+  background-color: #323232 !important;
+
+}
+
+.uk-card-body{
+  color: #e5e5e5;
+}
+
+.uk-card h3{
+    color: #e5e5e5 !important;
+}
+
+.bottom-nav {
+  padding: 30px;
+  font-size: 12px;
+  background-color: #999;
+  color: #e5e5e5;
+}
+
+.bottom-nav ul {
+  list-style-type: none;
+}
+
+.bottom-nav li {
+  display: inline;
+  text-align: center;
+  margin: 10px;
+}
+
+.bottom-nav a {
+  color: #e5e5e5;
+  text-decoration: none;
+}
+
+.bottom-nav a:hover {
+  color: #3ddb93;
+  transition-duration: 0.3s;
+  text-decoration: none;
+}
+
+/* Settings */
+
+.settings-one {
+  padding: 80px 50px !important;
+  min-height: 400px;
+  background-color: #999;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #e5e5e5;
+}
+
+.settings-one img {
+  max-height: 300px;
+}
+
+.settings-one h4 {
+  margin-bottom: 0 !important;
+}
+
+/* Dashboard */
+
+.dash-affiliates h1, .dash-charity h1 {
+  margin-bottom: 50px;
+  font-size: 60px;
+}
+
+.dash-greeting {
+  padding: 50px !important;
+  min-height: 300px;
+  background-color: #999;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #e5e5e5;
+}
+
+.dash-greeting h1{
+    color: #e5e5e5;
+}
+
+.dash-affiliates {
+  padding: 50px !important;
+  min-height: 400px;
+  background-color: #999;
+  text-align: center;
+}
+
+.dash-products {
+  padding: 50px !important;
+  min-height: 400px;
+  background-color: #3ddb93;
+  text-align: center;
+}
+
+.dash-charity {
+  padding: 50px !important;
+  min-height: 400px;
+  background-color: #323232;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #e5e5e5;
+}
+
+.your-charity {
+  text-align: center;
+  padding: 50px;
+  background-color: #fff;
+}
+
+.donations {
+  background-color: #3ddb93;
+  padding: 50px;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.products {
+  background-color: #eee;
+  padding: 50px;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.product-box {
+  height: 200px;
+  width: 200px;
+  background-color: #fff;
+  color: #000;
+}
+
+.welcome {
+  font-size: 32px;
+}
+
+.disclaimer {
+  font-size: 16px !important;
+}
+
+.product-line {
+  min-height: 400px;
+  display: none;
+}
+
+.charity {
+  min-height: 525px;
+}
+
+/*****************************/
+
+/* GOOGLE AUTH CSS OVERRIDES */
+
+/*****************************/
+
+.mdl-button{
+  box-shadow: none;
+  padding: 20px 70px;
+}
+
+.firebaseui-idp-button{
+  max-width: 700px !important;
+  border: 1px solid #36c584;
+}
+
+.login h1 {
+  font-size: 48px !important;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100 !important;
+  color: #36c584;
+  padding-bottom: 30px;
+}
+
+.login-page{
+  height: calc(100vh - 120px);
+  background-color: #f4f4f4;
+}
+
+.login-icon {
+  display: block;
+  color: #54b5ff;
+  font-size: 100px;
+  text-align: center !important;
+}
+
+.flat-icon {
+  height: 150px;
+  margin: 30px auto;
+}
+
+#change-name .uk-button-primary, #change-theme .uk-button-primary, #change-charity .uk-button-primary, #change-purchase-preferences .uk-button-primary {
+  margin-top: 5px;
+}
+
+#change-charity img, #setup-modal img {
+  max-height: 80px;
+  margin-right: 20px;
+}
+
+#submit-affiliates{
+  margin-top: 20px;
+  padding: 10px 100px;
+}
