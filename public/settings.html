@@ -10,6 +10,19 @@
 
   <title>outdoorRepo</title>
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116544559-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-116544559-1');
+  </script>
+
   <!-- Google Fonts API -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
@@ -25,118 +38,207 @@
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.css" />
 
   <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAM-t2CaMxXwb_HMZaqs-QHaGe1KETwmUM",
-    authDomain: "outdoorrepo-e22c5.firebaseapp.com",
-    databaseURL: "https://outdoorrepo-e22c5.firebaseio.com",
-    projectId: "outdoorrepo-e22c5",
-    storageBucket: "outdoorrepo-e22c5.appspot.com",
-    messagingSenderId: "565862631025"
-  };
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAM-t2CaMxXwb_HMZaqs-QHaGe1KETwmUM",
+      authDomain: "outdoorrepo-e22c5.firebaseapp.com",
+      databaseURL: "https://outdoorrepo-e22c5.firebaseio.com",
+      projectId: "outdoorrepo-e22c5",
+      storageBucket: "outdoorrepo-e22c5.appspot.com",
+      messagingSenderId: "565862631025"
+    };
     firebase.initializeApp(config);
 
     var database = firebase.database();
-
   </script>
 
 </head>
 
 <body>
   <header>
-    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-      <nav class="uk-navbar-container" uk-navbar>
-        <div class="uk-navbar-right">
-          <div class="uk-navbar-item">
-            <a class="uk-button uk-button-default" href="dashboard.html" uk-toggle>Back to Dashboard</a>
-          </div>
-          <div class="uk-navbar-item">
-            <a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Tell a Friend</a>
-          </div>
-          <div class="uk-navbar-item">
-            <a class="uk-button uk-button-primary" href="index.html" id="logout">Logout</a>
-          </div>
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="uk-navbar-right">
+        <div class="uk-navbar-item">
+          <a class="uk-button uk-button-default" href="dashboard.html" uk-toggle>Back to Dashboard</a>
         </div>
-      </nav>
-    </div>
+        <div class="uk-navbar-item">
+          <a class="uk-button uk-button-primary" href="index.html" id="logout">Logout</a>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <main>
 
 
     <div class="settings-one uk-container uk-container-expand">
-      <div class="uk-text-center">
-        <img src="assets/images/logo.png" alt="outdoorrepo logo" />
-        <h1> Settings </h1>
+      <div class="uk-container uk-container-small">
+        <div class="uk-text-center">
+          <h1> Settings </h1>
+        </div>
+        <h4> Preferred Name <a class="uk-button uk-button-info" href="#change-name" uk-toggle>Edit</a> </h4>
+
+        <div>
+          <p id="settings-preferred-name">
+          </p>
+        </div>
+
+
+        <h4> Email Address <a class="uk-button uk-button-info" href="#change-email" uk-toggle>Edit</a> </h4>
+        <div>
+          <p id="settings-email">
+          </p>
+        </div>
+
+        <h4> Purchase Preferences <a class="uk-button uk-button-info" href="#change-purchase-preferences" uk-toggle>Edit</a> </h4>
+        <div>
+          <p id="settings-purchase-preferences">
+          </p>
+        </div>
+
+        <h4> Theme <a class="uk-button uk-button-info" href="#change-theme" uk-toggle>Edit</a> </h4>
+        <div>
+          <p id="settings-theme">
+          </p>
+        </div>
+
+        <h4> Charity Choice <a class="uk-button uk-button-info" href="#change-charity" uk-toggle>Edit</a> </h4>
+        <div>
+          <p id="settings-charity">
+          </p>
+        </div>
+        <h4> Account </h4>
+        <a class="uk-button uk-button-primary" href="#delete-account" uk-toggle>Close Account</a>
+        <div class="uk-text-center">
+          <img src="assets/images/logo.png" alt="outdoorrepo logo" />
+        </div>
+
+
+
       </div>
-      <h4> Preferred Name </h4>
-      <div>
-        <p id="settings-preferred-name">
-
-        </p>
-      </div>
-
-
-      <h4> Email Address </h4>
-      <div>
-        <p id="settings-email">
-
-        </p>
-      </div>
-
-      <h4> Purchase Preferences </h4>
-      <div>
-        <p id="settings-purchase-preferences">
-
-        </p>
-      </div>
-
-      <h4> Theme </h4>
-      <div>
-        <p id="settings-theme">
-
-        </p>
-      </div>
-
-      <h4> Charity Choice </h4>
-      <div>
-        <p id="settings-charity">
-
-        </p>
-      </div>
-
-      <a class="uk-button uk-button-primary" href="index.html" id="change-settings">Edit Profile</a>
     </div>
-
   </main>
-
-
-
 
   <footer>
 
-      <div class="bottom-nav uk-text-center uk-margin-remove">
-        <ul>
-          <li>
-            <a href="https://app.termly.io/document/terms-of-use-for-website/756933db-2d42-44fd-87bc-4b6b9870d7c2">Terms</a>
-          </li>
-          <li>
-            <a href="">Support</a>
-          </li>
-          <!-- FAQ modal link -->
-          <li>
-            <a href="#faq-modal" uk-toggle>FAQs</a>
-          </li>
-        </ul>
+    <div class="bottom-nav uk-text-center uk-margin-remove">
+      <ul>
+        <li>
+          <a href="https://app.termly.io/document/terms-of-use-for-website/756933db-2d42-44fd-87bc-4b6b9870d7c2">Terms</a>
+        </li>
+        <li>
+          <a href="">Support</a>
+        </li>
+        <!-- FAQ modal link -->
+        <li>
+          <a href="#faq-modal" uk-toggle>FAQs</a>
+        </li>
+      </ul>
+      <p>
+        Copyright &copy; 2018-2019 | outdoorRepo
+      </p>
+    </div>
+
+
+  </footer>
+
+
+  <!--Change Preferred Name-->
+
+  <div id="change-name" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      <h3>Change Preferred Name</h3>
+      <input class="uk-input" id="change-preferred-name">
+      <a type="button" class="uk-button uk-button-primary" id="commit-name-change" uk-toggle>Submit</a>
+    </div>
+  </div>
+
+  <!--Change Email-->
+
+  <div id="change-email" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      <h3>Change Email Address</h3>
+      <input class="uk-input" id="change-user-email">
+      <a type="button" class="uk-button uk-button-primary" id="commit-email-change" uk-toggle>Submit</a>
+    </div>
+  </div>
+
+
+  <!--Change Purchase Preferences-->
+  <div id="change-purchase-preferences" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      <h3>Change Purchase Preferences</h3>
+      <div class="uk-width-1-4@s">
         <p>
-          Copyright &copy; 2018-2019 | outdoorRepo
-        </p>
+          <input class="uk-checkbox" value="Hiking Gear" id="new-hiking" type="checkbox"> Hiking Gear</p>
       </div>
-  
-  
-    </footer>
+      <div class="uk-width-1-4@s">
+        <p>
+          <input class="uk-checkbox" value="Cycling Gear" id="new-cycling" type="checkbox"> Cycling Gear</p>
+      </div>
+      <div class="uk-width-1-4@s">
+        <p>
+          <input class="uk-checkbox" value="Snow Sports" id="new-snow-sports" type="checkbox"> Snow Sports</p>
+      </div>
+      <div class="uk-width-1-4@s">
+        <p>
+          <input class="uk-checkbox" value="General Fitness" id="new-general-fitness" type="checkbox"> General Fitness</p>
+      </div>
+      <a type="button" class="uk-button uk-button-primary" id="commit-purchase-change" uk-toggle>Submit</a>
+    </div>
+  </div>
+
+  <!--Theme-->
+  <div id="change-theme" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      <h3>Change Theme</h3>
+      <div class="uk-form-controls uk-form-controls-text">
+        <p>
+          <input class="uk-radio" type="radio" name="theme" id="new-light-theme"> Light Theme</p>
+        <p>
+          <input class="uk-radio" type="radio" name="theme" id="new-dark-theme"> Dark Theme</p>
+      </div>
+      <a type="button" class="uk-button uk-button-primary" id="commit-theme-change" uk-toggle>Submit</a>
+    </div>
+  </div>
+
+  <!--Charity Choice-->
+  <div id="change-charity" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      <h3>Change Charity</h3>
+      <p>
+        <img src="assets/images/water.png"><input class="uk-radio" value="water" name="charity" type="radio" id="new-water"> Water.org</p>
+      <p>
+        <img src="assets/images/sierra-club.png"><input class="uk-radio" value="sierra" name="charity" type="radio" id="new-sierra"> SierraClubFoundation.org</p>
+      <p>
+        <img src="assets/images/ocean-conservancy.png"><input class="uk-radio" value="ocean" name="charity" type="radio" id="new-ocean"> OceanConservancy.org</p>
+      <a type="button" class="uk-button uk-button-primary" id="commit-charity-change" uk-toggle>Submit</a>
+    </div>
+  </div>
 
 
+  <!--Delete Account Modal-->
+  <div id="delete-account" uk-modal>
+    <div class="uk-modal-dialog">
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      <div class="uk-modal-header">
+        <h2 class="uk-modal-title">Warning!</h2>
+      </div>
+      <div class="uk-modal-body">
+        <p>You are about to delete your account. This action is irrevocable and <strong>cannot</strong> be undone.</p>
+        <p>Are you sure you want to delete your account?</p>
+      </div>
+      <div class="uk-modal-footer uk-text-right">
+        <button class="uk-button uk-button-default uk-modal-close" type="button">No! I'd like to still give to charity.</button>
+        <button class="uk-button uk-button-primary" type="button" id="delete">Yes, I'm sure :(</button>
+      </div>
+    </div>
+  </div>
 
 
   <!-- Refer a Friend Modal -->
@@ -215,22 +317,21 @@
   <script src="assets/app.js"></script>
 
   <script>
-  //Auth Check & User Log
-  var pathname = window.location.pathname;
+    //Auth Check & User Log
+    var pathname = window.location.pathname;
 
-  if (pathname == "/settings.html") {
-    firebase.auth().onAuthStateChanged(function(user) {
-      console.log('authStateChanged', user);
-      if (user) {
-      } else {
-        window.location.replace("../index.html");
-      }
-    });
-  }
+    if (pathname == "/settings.html") {
+      firebase.auth().onAuthStateChanged(function(user) {
+        console.log('authStateChanged', user);
+        if (user) {} else {
+          window.location.replace("../index.html");
+        }
+      });
+    }
   </script>
 
   <script>
-  //Logout Script
+    //Logout Script
     $("#logout").on("click", function() {
       firebase.auth().signOut().then(function() {
         // Sign-out successful.
@@ -243,18 +344,15 @@
   </script>
 
   <script>
-
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-    userSettings();
-    } else {
-      // No user is signed in.
-    }
-  });
-
-
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        userSettings();
+      } else {
+        // No user is signed in.
+      }
+    });
   </script>
 
 </body>
 
-</html>
+</html>i

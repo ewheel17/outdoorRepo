@@ -10,6 +10,16 @@
 
   <title>outdoorRepo</title>
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116544559-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-116544559-1');
+  </script>
+
   <!-- Google Fonts API -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
@@ -23,32 +33,17 @@
   <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css">
 
-  <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAM-t2CaMxXwb_HMZaqs-QHaGe1KETwmUM",
-    authDomain: "outdoorrepo-e22c5.firebaseapp.com",
-    databaseURL: "https://outdoorrepo-e22c5.firebaseio.com",
-    projectId: "outdoorrepo-e22c5",
-    storageBucket: "outdoorrepo-e22c5.appspot.com",
-    messagingSenderId: "565862631025"
-  };
-    firebase.initializeApp(config);
-
-    var database = firebase.database();
-
-  </script>
-
-
   <body onload="setUpDash()">
     <header>
-        <div class="uk-navbar-container" uk-navbar>
+
+       <div class="uk-navbar-container" uk-navbar>
+        <nav class="uk-navbar-container" uk-navbar>
           <div class="uk-navbar-left">
             <img src="assets/images/logo.png" class="uk-navbar-item uk-logo">
           </div>
           <div class="uk-navbar-right">
             <div class="uk-navbar-item">
-              <a class="uk-button uk-button-default" href="" uk-toggle>Add Affiliates</a>
+              <a class="uk-button uk-button-default" href="search.html" uk-toggle>Update Affiliates</a>
             </div>
             <div class="uk-navbar-item">
               <a class="uk-button uk-button-default" href="settings.html" id="user-settings">My Account </a>
@@ -60,12 +55,13 @@
               <a class="uk-button uk-button-primary" id="logout">Logout</a>
             </div>
           </div>
-        </div>
+        </nav>
+      </div>
 
-      <div class="uk-text-center dash-one" uk-grid>
+
+      <div class="uk-text-center dash-greeting" uk-grid>
 
         <h1 id="welcome"></h1>
-        <p>Your charity donations: <strong>${dollars}</strong></p>
         <p>Don't forget to stuff your cookie jar so you can keep on donating.</p>
         <button id="cookie-stuff" class="uk-button uk-button-primary" type="button">give me all the cookies</button>
       </div>
@@ -73,60 +69,22 @@
 
     <main>
 
-      <div class="uk-container uk-container-expand dash-two">
-        <h1>Your Shopping Destinations</h1>
-        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3>Product #1</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
-            </div>
-          </div>
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3>Product #2</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
-            </div>
-          </div>
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3>Product #3</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3>Product #4</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
-            </div>
-          </div>
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3>Product #5</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
-            </div>
-          </div>
-          <div>
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3>Product #6</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non urna felis. Cras in ante eu ex facilisis bibendum eget ac neque.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="dash-three uk-text-center uk-container uk-container-expand">
-        <h2>Your Donations</h2>
+      <div class="dash-charity uk-text-center uk-container uk-container-expand">
+        <h1>Where Your Donations Are Going</h1>
         <img id="charity-logo">
         <h3 id="display-charity"></h3>
         <p id="charity-description"></p>
-        <a class="uk-button uk-button-primary" href="settings.html" type="button">Change my Charity</a>
+        <a class="uk-button uk-button-primary" href="#change-charity" uk-toggle>Change my Charity</a>
       </div>
+
+
+      <div class="uk-container uk-container-expand dash-affiliates">
+        <h1>Your Shopping Destinations</h1>
+        <div class="uk-child-width-expand@s uk-text-center uk-grid-match" id="affiliate-grid" uk-grid>
+          <div id="no-affiliates"> You currently haven't got any selected affiliates. </div>
+        </div>
+      </div>
+
     </main>
 
     <footer>
@@ -189,6 +147,20 @@
       </div>
     </div>
 
+    <!--Charity Choice-->
+    <div id="change-charity" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <h3>Change Charity</h3>
+            <p>
+              <img src="assets/images/water.png"><input class="uk-radio" value="water" name="charity" type="radio" id="new-water"> Water.org</p>
+            <p>
+              <img src="assets/images/sierra-club.png"><input class="uk-radio" value="sierra" name="charity" type="radio" id="new-sierra"> SierraClubFoundation.org</p>
+            <p>
+              <img src="assets/images/ocean-conservancy.png"><input class="uk-radio" value="ocean" name="charity" type="radio" id="new-ocean"> OceanConservancy.org</p>
+            <a type="button" class="uk-button uk-button-primary" id="commit-charity-change" uk-toggle>Submit</a>
+        </div>
+    </div>
 
 
     <!--Account Setup Modal -->
@@ -196,42 +168,48 @@
 
       <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
         <div id="setup-modal-text">
-          <button class="uk-modal-close-default" type="button" uk-close></button>
 
-          <form>
             <h2>It looks like you just logged in for the first time. Congrats!</h2>
             <p>We'd like to help you get your user dashboard set up!</p>
 
-            <h3> What should we call you? <h3>
-            <input class="uk-input" id="preferred-name">
+            <h3> What should we call you?
+              <h3>
+                <input class="uk-input" id="preferred-name">
 
-            <h3>Which theme would you like to enable?</h3>
-            <div class="uk-form-controls uk-form-controls-text">
-              <p><input class="uk-radio" type="radio" name="theme" id="light-theme"> Light Theme</p>
-              <p><input class="uk-radio" type="radio" name="theme" id="dark-theme"> Dark Theme</p>
-            </div>
+                <h3>Which theme would you like to enable?</h3>
+                <div class="uk-form-controls uk-form-controls-text">
+                  <p>
+                    <input class="uk-radio" type="radio" name="theme" id="light-theme"> Light Theme</p>
+                  <p>
+                    <input class="uk-radio" type="radio" name="theme" id="dark-theme"> Dark Theme</p>
+                </div>
 
-            <div class="uk-grid-small" uik-grid>
-              <h3>What do you like to buy?</h3>
-              <div class="uk-width-1-4@s">
-                <p> <input class="uk-checkbox" value="hiking" id="hiking" type="checkbox"> Hiking Gear</p>
-              </div>
-              <div class="uk-width-1-4@s">
-                <p> <input class="uk-checkbox" value="cycling" id="cycling" type="checkbox"> Cycling Gear</p>
-              </div>
-              <div class="uk-width-1-4@s">
-                <p> <input class="uk-checkbox" value="snow-sports" id="snow-sports" type="checkbox"> Snow Sports</p>
-              </div>
-              <div class="uk-width-1-4@s">
-                <p> <input class="uk-checkbox" value="gen-fitness" id="general-fitness" type="checkbox"> General Fitness</p>
-              </div>
-            </div>
+                  <h3>What do you like to buy?</h3>
+                  <div class="uk-width-1-4@s">
+                    <p>
+                      <input class="uk-checkbox" value="Hiking Gear" id="hiking" type="checkbox"> Hiking Gear</p>
+                  </div>
+                  <div class="uk-width-1-4@s">
+                    <p>
+                      <input class="uk-checkbox" value="Cycling Gear" id="cycling" type="checkbox"> Cycling Gear</p>
+                  </div>
+                  <div class="uk-width-1-4@s">
+                    <p>
+                      <input class="uk-checkbox" value="Snow Sports" id="snow-sports" type="checkbox"> Snow Sports</p>
+                  </div>
+                  <div class="uk-width-1-4@s">
+                    <p>
+                      <input class="uk-checkbox" value="General Fitness" id="general-fitness" type="checkbox"> General Fitness</p>
+                  </div>
 
-            <h3>Which charity would you like to contribute to?</h3>
-            <p><input class="uk-radio" value="water" name="charity" type="radio" id="water"> Water.org</p>
-            <p><input class="uk-radio" value="sierra" name="charity" type="radio" id="sierra"> SierraClubFoundation.org</p>
-            <p><input class="uk-radio" value="ocean" name="charity" type="radio" id="ocean"> OceanConservancy.org</p>
-            <a type="button" class="uk-button uk-button-default" id="finished-setup" uk-toggle>Submit</a>
+                <h3>Which charity would you like to contribute to?</h3>
+                <p>
+                  <img src="assets/images/water.png"><input class="uk-radio" value="water" name="charity" type="radio" id="water"> Water.org</p>
+                <p>
+                  <img src="assets/images/sierra-club.png"><input class="uk-radio" value="sierra" name="charity" type="radio" id="sierra"> SierraClubFoundation.org</p>
+                <p>
+                  <img src="assets/images/ocean-conservancy.png"><input class="uk-radio" value="ocean" name="charity" type="radio" id="ocean"> OceanConservancy.org</p>
+                <a type="button" class="uk-button uk-button-default" id="finished-setup" uk-toggle>Submit</a>
         </div>
       </div>
     </div>
@@ -275,15 +253,30 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
     <script src="assets/app.js"></script>
 
 
     <script>
-    //Auth Check & User Log
-    var pathname = window.location.pathname;
+
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAM-t2CaMxXwb_HMZaqs-QHaGe1KETwmUM",
+        authDomain: "outdoorrepo-e22c5.firebaseapp.com",
+        databaseURL: "https://outdoorrepo-e22c5.firebaseio.com",
+        projectId: "outdoorrepo-e22c5",
+        storageBucket: "outdoorrepo-e22c5.appspot.com",
+        messagingSenderId: "565862631025"
+      };
+      firebase.initializeApp(config);
+
+      var database = firebase.database();
+
+      //Auth Check & User Log
+      var pathname = window.location.pathname;
 
     if (pathname == "/dashboard.html") {
       firebase.auth().onAuthStateChanged(function(user) {
@@ -294,17 +287,17 @@
         }
       });
     }
+
     </script>
 
     <script>
-    //Logout Script
-      $("#logout").on("click", function() {
-        firebase.auth().signOut().then(function() {
+      //Logout Script
+      $("#logout").on("click", function () {
+        firebase.auth().signOut().then(function () {
           // Sign-out successful.
-          localStorage.clear();
-          window.location.href = "index.html";
-        }, function(error) {
-        	console.log(error);
+          localStorage.clear(); window.location.href = "index.html";
+        }, function (error) {
+          console.log(error);
         });
       });
     </script>
@@ -312,13 +305,14 @@
 
     <script>
 
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-              getUserProfile();
-      } else {
-        // No user is signed in.
-      }
-    });
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          getUserProfile();
+          displayAffiliates()
+        } else {
+          // No user is signed in.
+        }
+      });
 
     </script>
 

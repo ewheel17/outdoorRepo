@@ -1,31 +1,277 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="assets/images/logo.png" type="image/gif" sizes="16x16">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="assets/images/logo.png" type="image/gif" sizes="16x16">
 
-    <title>outdoorRepo</title>
+  <title>outdoorRepo</title>
 
-    <!-- Google Fonts API -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116544559-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-    <!-- Custom styles for this template -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css">
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-116544559-1');
+  </script>
+
+  <!-- Google Fonts API -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <!-- Firebase UI Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.css" />
+
+  <!-- Custom styles for this template -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css">
+
+  <body onload="setUpDash()">
+    <header>
+      <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+          <img src="assets/images/logo.png" class="uk-navbar-item uk-logo">
+        </div>
+        <div class="uk-navbar-right">
+          <div class="uk-navbar-item">
+            <a class="uk-button uk-button-default" href="dashboard.html" id="user-settings">Back to Dashboard</a>
+          </div>
+          <div class="uk-navbar-item">
+            <a class="uk-button uk-button-primary" id="logout">Logout</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="uk-container uk-container-expand section-one">
+
+        <div class="uk-text-center">
+          <h1> Available Affiliates </h1>
+            <p> Please select <em>all</em> affiliates you'd like to work with. </p>
+      </div>
+
+      <div class="uk-grid-small  uk-child-width-expand@s uk-grid-match" uk-grid>
+        <div>
+          <div class="uk-card uk-card-default">
+            <div class="uk-card-header">
+              <div class="uk-grid-small uk-flex-middle" uk-grid>
+                  <div class="uk-width-auto">
+                    <img class="uk-border-circle" width="40" height="40" src="assets/images/cabelas.png">
+                  </div>
+                  <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Cabela's Inc.</h3>
+                    <p><input class="uk-checkbox" value="cabelas" id="add-cabelas" type="checkbox">&nbsp;&nbsp;&nbsp;Add</p>
+                  </div>
+              </div>
+            </div>
+            <div class="uk-card-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="uk-card uk-card-default">
+            <div class="uk-card-header">
+              <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                  <img class="uk-border-circle" width="40" height="40" src="assets/images/marmot.jpg">
+                </div>
+                <div class="uk-width-expand">
+                  <h3 class="uk-card-title uk-margin-remove-bottom">Marmot Mountain LLC</h3>
+                  <p><input class="uk-checkbox" value="marmot" id="add-marmot" type="checkbox">&nbsp;&nbsp;&nbsp;Add</p>
+                </div>
+              </div>
+            </div>
+            <div class="uk-card-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="uk-card uk-card-default">
+            <div class="uk-card-header">
+              <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                  <img class="uk-border-circle" width="40" height="40" src="assets/images/rei.png">
+                </div>
+                <div class="uk-width-expand">
+                  <h3 class="uk-card-title uk-margin-remove-bottom">Recreational Equipment, Inc.</h3>
+                  <p><input class="uk-checkbox" value="rei" id="add-rei" type="checkbox">&nbsp;&nbsp;&nbsp;Add</p>
+                </div>
+              </div>
+            </div>
+            <div class="uk-card-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="uk-grid-small  uk-child-width-expand@s uk-grid-match" uk-grid>
+        <div>
+          <div class="uk-card uk-card-default">
+            <div class="uk-card-header">
+              <div class="uk-grid-small uk-flex-middle" uk-grid>
+                  <div class="uk-width-auto">
+                    <img class="uk-border-circle" width="40" height="40" src="assets/images/deuter.jpg">
+                  </div>
+                  <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Deuter</h3>
+                    <p><input class="uk-checkbox" value="deuter" id="add-deuter" type="checkbox">&nbsp;&nbsp;&nbsp;Add</p>
+                  </div>
+              </div>
+            </div>
+            <div class="uk-card-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="uk-card uk-card-default">
+            <div class="uk-card-header">
+              <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                  <img class="uk-border-circle" width="40" height="40" src="assets/images/backcountry.png">
+                </div>
+                <div class="uk-width-expand">
+                  <h3 class="uk-card-title uk-margin-remove-bottom">Backcountry</h3>
+                  <p><input class="uk-checkbox" value="backcountry" id="add-backcountry" type="checkbox">&nbsp;&nbsp;&nbsp;Add</p>
+                </div>
+              </div>
+            </div>
+            <div class="uk-card-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="uk-card uk-card-default">
+            <div class="uk-card-header">
+              <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                  <img class="uk-border-circle" width="40" height="40" src="assets/images/patagonia.jpg">
+                </div>
+                <div class="uk-width-expand">
+                  <h3 class="uk-card-title uk-margin-remove-bottom">Patagonia</h3>
+                  <p><input class="uk-checkbox" value="patagonia" id="add-patagonia" type="checkbox">&nbsp;&nbsp;&nbsp;Add</p>
+                </div>
+              </div>
+            </div>
+            <div class="uk-card-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="uk-grid-small  uk-child-width-expand@s uk-grid-match" uk-grid>
+        <div>
+          <div class="uk-card uk-card-default">
+            <div class="uk-card-header">
+              <div class="uk-grid-small uk-flex-middle" uk-grid>
+                  <div class="uk-width-auto">
+                    <img class="uk-border-circle" width="40" height="40" src="assets/images/mountain.jpg">
+                  </div>
+                  <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Mountain Hardware</h3>
+                    <p><input class="uk-checkbox" value="mountain-hardware" id="add-mountain" type="checkbox">&nbsp;&nbsp;&nbsp;Add</p>
+                  </div>
+              </div>
+            </div>
+            <div class="uk-card-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="uk-card uk-card-default">
+            <div class="uk-card-header">
+              <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                  <img class="uk-border-circle" width="40" height="40" src="assets/images/amazonlogo.svg">
+                </div>
+                <div class="uk-width-expand">
+                  <h3 class="uk-card-title uk-margin-remove-bottom">Amazon.com</h3>
+                  <p><input class="uk-checkbox" value="amazon" id="add-amazon" type="checkbox">&nbsp;&nbsp;&nbsp;Add</p>
+                </div>
+              </div>
+            </div>
+            <div class="uk-card-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uk-text-center">
+                  <a class="uk-button uk-button-primary" id="submit-affiliates">Submit</a>
+                </div>
+    </div>
+
+
 
     <!-- Scripts -->
-    <!-- <script type="text/javascript" src="http://classic.avantlink.com/affiliate_app_confirm.php?mode=js&authResponse=d4270748e825e869ba441d1ff08433eaeef5b6cf"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
+    <script src="assets/app.js"></script>
 
-</head>
 
-<body>
-    
-</body>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAM-t2CaMxXwb_HMZaqs-QHaGe1KETwmUM",
+        authDomain: "outdoorrepo-e22c5.firebaseapp.com",
+        databaseURL: "https://outdoorrepo-e22c5.firebaseio.com",
+        projectId: "outdoorrepo-e22c5",
+        storageBucket: "outdoorrepo-e22c5.appspot.com",
+        messagingSenderId: "565862631025"
+      };
+      firebase.initializeApp(config);
+
+      var database = firebase.database();
+
+      //Auth Check & User Log
+      var pathname = window.location.pathname;
+
+    if (pathname == "/search.html") {
+      firebase.auth().onAuthStateChanged(function(user) {
+        console.log('authStateChanged', user);
+        if (user) {
+        } else {
+          window.location.replace("../index.html");
+        }
+      });
+    }
+    </script>
+
+    <script>
+    //Logout Script
+      $("#logout").on("click", function() {
+        firebase.auth().signOut().then(function() {
+          // Sign-out successful.
+          localStorage.clear();
+          window.location.href = "index.html";
+        }, function(error) {
+        	console.log(error);
+        });
+      });
+    </script>
+  </body>
 </html>
