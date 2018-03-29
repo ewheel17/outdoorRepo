@@ -28,13 +28,13 @@
 
   <!-- Custom styles for this template -->
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/app.css" id="theme-choice"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css">
 
   <!-- Scripts -->
   <!-- <script type="text/javascript" src="http://classic.avantlink.com/affiliate_app_confirm.php?mode=js&authResponse=d4270748e825e869ba441d1ff08433eaeef5b6cf"></script> -->
   <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-  <script src="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/32.6.3/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.css" />
 
   <script>
@@ -276,9 +276,9 @@
   <!-- FAQ modal -->
   <div id="faq-modal" class="uk-flex-top" uk-modal>
       <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-  
+
         <button class="uk-modal-close-outside" type="button" uk-close></button>
-  
+
         <ul uk-accordion>
           <li class="uk-open">
             <a class="uk-accordion-title" href="#">What is OutdoorRepo?</a>
@@ -305,7 +305,7 @@
             </div>
           </li>
         </ul>
-  
+
       </div>
     </div>
 
@@ -347,6 +347,7 @@
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         userSettings();
+        setTheme()
       } else {
         // No user is signed in.
       }
