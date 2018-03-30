@@ -6,13 +6,13 @@ footer {
   background-color: #eee;
 }
 
-h1{
+h1 {
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 300 !important;
   color: #e5e5e5 !important;
 }
 
-p{
+p {
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 300;
 }
@@ -21,10 +21,11 @@ p{
   max-height: 250px;
 }
 
-.uk-button-primary{
+.uk-button-primary {
   background-color: #155ea8 !important;
   color: #e5e5e5;
 }
+
 .uk-navbar {
   padding: 10px;
   background-color: #999 !important;
@@ -108,7 +109,7 @@ hr {
 }
 
 .section-five h1, .section-five h3 {
-  color: #fff ;
+  color: #fff;
   font-weight: 300;
 }
 
@@ -120,17 +121,16 @@ hr {
   max-height: 200px;
 }
 
-.uk-card{
+.uk-card {
   background-color: #323232 !important;
-
 }
 
-.uk-card-body{
+.uk-card-body {
   color: #e5e5e5;
 }
 
-.uk-card h3{
-    color: #e5e5e5 !important;
+.uk-card h3 {
+  color: #e5e5e5 !important;
 }
 
 .bottom-nav {
@@ -198,8 +198,8 @@ hr {
   color: #e5e5e5;
 }
 
-.dash-greeting h1{
-    color: #e5e5e5;
+.dash-greeting h1 {
+  color: #e5e5e5;
 }
 
 .dash-affiliates {
@@ -300,12 +300,12 @@ hr {
 
 /*****************************/
 
-.mdl-button{
+.mdl-button {
   box-shadow: none;
   padding: 20px 70px;
 }
 
-.firebaseui-idp-button{
+.firebaseui-idp-button {
   max-width: 700px !important;
   border: 1px solid #36c584;
 }
@@ -318,7 +318,7 @@ hr {
   padding-bottom: 30px;
 }
 
-.login-page{
+.login-page {
   height: calc(100vh - 120px);
   background-color: #f4f4f4;
 }
@@ -344,7 +344,29 @@ hr {
   margin-right: 20px;
 }
 
-#submit-affiliates{
+#submit-affiliates {
   margin-top: 20px;
   padding: 10px 100px;
+}
+
+#navbar-toggle {
+  display: none;
+}
+
+#affiliate-grid a {
+  text-decoration: none;
+}
+
+#affiliate-grid a h3:hover {
+  color: #36c584;
+  transition-duration: 0.3s;
+}
+
+@media (max-width: 1040px) {
+  #navbar-toggle {
+    display: inline;
+  }
+  #navbar-menu {
+    display: none;
+  }
 }

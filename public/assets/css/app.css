@@ -6,12 +6,12 @@ footer {
   background-color: #eee;
 }
 
-h1{
+h1 {
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 300 !important;
 }
 
-p{
+p {
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 300;
 }
@@ -274,12 +274,12 @@ hr {
 
 /*****************************/
 
-.mdl-button{
+.mdl-button {
   box-shadow: none;
   padding: 20px 70px;
 }
 
-.firebaseui-idp-button{
+.firebaseui-idp-button {
   max-width: 700px !important;
   border: 1px solid #36c584;
 }
@@ -292,7 +292,7 @@ hr {
   padding-bottom: 30px;
 }
 
-.login-page{
+.login-page {
   height: calc(100vh - 120px);
   background-color: #f4f4f4;
 }
@@ -318,22 +318,29 @@ hr {
   margin-right: 20px;
 }
 
-#submit-affiliates{
+#submit-affiliates {
   margin-top: 20px;
   padding: 10px 100px;
 }
 
-#navbar-toggle{
+#navbar-toggle {
   display: none;
 }
 
+#affiliate-grid a {
+  text-decoration: none;
+}
+
+#affiliate-grid a h3:hover {
+  color: #36c584;
+  transition-duration: 0.3s;
+}
 
 @media (max-width: 1040px) {
-    #navbar-toggle {
+  #navbar-toggle {
     display: inline;
-    }
-
-    #navbar-menu{
-      display: none;
-    }
+  }
+  #navbar-menu {
+    display: none;
+  }
 }

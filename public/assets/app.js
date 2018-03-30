@@ -266,7 +266,7 @@ $("#commit-theme-change").on("click", function(event) {
   var theme;
   if ($('#new-dark-theme').is(':checked')) {
     theme = "Dark Theme";
-  } else if($('#new-light-theme').is(':checked')){
+  } else if ($('#new-light-theme').is(':checked')) {
     theme = "Light Theme";
   };
 
@@ -382,13 +382,13 @@ $("#submit-affiliates").on("click", function(event) {
 
 //Display Affiliates on Dashboard
 
-function displayAffiliates(){
+function displayAffiliates() {
   var userId = firebase.auth().currentUser.uid;
   firebase.database().ref('/users/' + userId + '/activeAffiliates/').once('value').then(function(snapshot) {
     var activeAffiliates = (snapshot.val());
     console.log(activeAffiliates);
 
-    for (var i = 0; i < activeAffiliates.length; i++){
+    for (var i = 0; i < activeAffiliates.length; i++) {
       var cabelasImg = "assets/images/cabelas.png";
       var marmotImg = "assets/images/marmot.jpg";
       var deuterImg = "assets/images/deuter.jpg";
@@ -407,65 +407,65 @@ function displayAffiliates(){
       var backcountryUrl = "https://www.backcountry.com/";
       var patagoniaUrl = "http://www.patagonia.com/";
       var affiliateUrl;
-      if (activeAffiliates[i] === "Cabela's"){
+      if (activeAffiliates[i] === "Cabela's") {
         affiliateImage = cabelasImg;
         affiliateUrl = cabelasUrl;
       }
-      if (activeAffiliates[i] === "Marmot"){
+      if (activeAffiliates[i] === "Marmot") {
         affiliateImage = marmotImg;
         affiliateUrl = marmotUrl;
       }
-      if (activeAffiliates[i] === "REI"){
+      if (activeAffiliates[i] === "REI") {
         affiliateImage = reiImg;
         affiliateUrl = reiUrl;
       }
-      if (activeAffiliates[i] === "Deuter"){
+      if (activeAffiliates[i] === "Deuter") {
         affiliateImage = deuterImg;
         affiliateUrl = deuterUrl;
       }
-      if (activeAffiliates[i] === "Mountain Hardware"){
+      if (activeAffiliates[i] === "Mountain Hardware") {
         affiliateImage = mountainImg;
         affiliateUrl = mountainHardwareUrl;
       }
-      if (activeAffiliates[i] === "Amazon.com"){
+      if (activeAffiliates[i] === "Amazon.com") {
         affiliateImage = amazonImg;
         affiliateUrl = amazonUrl;
       }
-      if (activeAffiliates[i] === "Backcountry"){
+      if (activeAffiliates[i] === "Backcountry") {
         affiliateImage = backcountryImg;
         affiliateUrl = backcountryUrl;
       }
-      if (activeAffiliates[i] === "Patagonia"){
+      if (activeAffiliates[i] === "Patagonia") {
         affiliateImage = patagoniaImg;
         affiliateUrl = patagoniaUrl;
       }
       $("#no-affiliates").fadeOut();
       $("#affiliate-grid").append("<div class='uk-width-1-5@l'><div class='uk-card uk-card-default uk-card-body'><a href = '" + affiliateUrl + "' target = '_blank'><h3>" + activeAffiliates[i] +
-      "</h3><img src='" + affiliateImage + "'></a></div></div>");
+        "</h3><img src='" + affiliateImage + "'></a></div></div>");
     }
   });
 }
 
 
 
-function setTheme(){
-    var userId = firebase.auth().currentUser.uid;
+function setTheme() {
+  var userId = firebase.auth().currentUser.uid;
 
-    firebase.database().ref('/users/' + userId + '/themeChoice/').once('value').then(function(snapshot) {
-      chosenTheme = (snapshot.val());
-            console.log(chosenTheme); //logs theme correctly
+  firebase.database().ref('/users/' + userId + '/themeChoice/').once('value').then(function(snapshot) {
+    chosenTheme = (snapshot.val());
+    console.log(chosenTheme); //logs theme correctly
 
-      if (chosenTheme == "Dark Theme"){
-        $("#theme-choice").attr("href","assets/css/app-dark.css");
-      } else {
-        $("#theme-choice").attr("href","assets/css/app.css");
-      }
+    if (chosenTheme == "Dark Theme") {
+      $("#theme-choice").attr("href", "assets/css/app-dark.css");
+    } else {
+      $("#theme-choice").attr("href", "assets/css/app.css");
+    }
 
-    });
+  });
 }
 
 $("#learnMore").click(function() {
   $('html, body').animate({
-      scrollTop: $("#knowMore").offset().top
+    scrollTop: $("#knowMore").offset().top
   }, 800);
 });
