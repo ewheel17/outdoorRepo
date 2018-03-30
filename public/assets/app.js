@@ -398,35 +398,50 @@ function displayAffiliates(){
       var backcountryImg = "assets/images/backcountry.png";
       var patagoniaImg = "assets/images/patagonia.jpg";
       var affiliateImage;
-
+      var cabelasUrl = "https://www.cabelas.com/";
+      var marmotUrl = "https://www.marmot.com/";
+      var deuterUrl = "https://www.deuter.com/US/us/";
+      var reiUrl = "https://www.rei.com/";
+      var mountainHardwareUrl = "https://www.mountainhardwear.com/home";
+      var amazonUrl = "https://www.amazon.com/";
+      var backcountryUrl = "https://www.backcountry.com/";
+      var patagoniaUrl = "http://www.patagonia.com/";
+      var affiliateUrl;
       if (activeAffiliates[i] === "Cabela's"){
         affiliateImage = cabelasImg;
+        affiliateUrl = cabelasUrl;
       }
       if (activeAffiliates[i] === "Marmot"){
         affiliateImage = marmotImg;
+        affiliateUrl = marmotUrl;
       }
       if (activeAffiliates[i] === "REI"){
         affiliateImage = reiImg;
+        affiliateUrl = reiUrl;
       }
       if (activeAffiliates[i] === "Deuter"){
         affiliateImage = deuterImg;
+        affiliateUrl = deuterUrl;
       }
       if (activeAffiliates[i] === "Mountain Hardware"){
         affiliateImage = mountainImg;
+        affiliateUrl = mountainHardwareUrl;
       }
       if (activeAffiliates[i] === "Amazon.com"){
         affiliateImage = amazonImg;
+        affiliateUrl = amazonUrl;
       }
       if (activeAffiliates[i] === "Backcountry"){
         affiliateImage = backcountryImg;
+        affiliateUrl = backcountryUrl;
       }
       if (activeAffiliates[i] === "Patagonia"){
         affiliateImage = patagoniaImg;
+        affiliateUrl = patagoniaUrl;
       }
-
       $("#no-affiliates").fadeOut();
-      $("#affiliate-grid").append("<div class='uk-width-1-5'><div class='uk-card uk-card-default uk-card-body'><h3>" + activeAffiliates[i] +
-      "</h3><img src='" + affiliateImage + "'></div></div>");
+      $("#affiliate-grid").append("<div class='uk-width-1-5@l'><div class='uk-card uk-card-default uk-card-body'><a href = '" + affiliateUrl + "' target = '_blank'><h3>" + activeAffiliates[i] +
+      "</h3><img src='" + affiliateImage + "'></a></div></div>");
     }
   });
 }
