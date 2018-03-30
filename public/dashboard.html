@@ -38,9 +38,12 @@
 
         <nav class="uk-navbar-container" uk-navbar>
           <div class="uk-navbar-left">
-            <img src="assets/images/logo.png" class="uk-navbar-item uk-logo">
+            <a href="#" class="uk-navbar-item uk-logo"> <img class="uk-preserve-width" src="assets/images/logo.png"></a>
           </div>
-          <div class="uk-navbar-right">
+            <div class="uk-navbar-item uk-navbar-right" id="navbar-toggle">
+                <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#offcanvas-nav" uk-toggle></a>
+            </div>
+          <div class="uk-navbar-right" id="navbar-menu">
             <div class="uk-navbar-item">
               <a class="uk-button uk-button-default" href="search.html" uk-toggle>Update Affiliates</a>
             </div>
@@ -54,14 +57,12 @@
               <a class="uk-button uk-button-primary" id="logout">Logout</a>
             </div>
           </div>
+
         </nav>
 
-
       <div class="uk-text-center dash-greeting" uk-grid>
-
+        <span class="login-icon"><i class="fa fa-user-o" aria-hidden="true"></i></span>
         <h1 id="welcome"></h1>
-        <p>Don't forget to stuff your cookie jar so you can keep on donating.</p>
-        <button id="cookie-stuff" class="uk-button uk-button-primary" type="button">give me all the cookies</button>
       </div>
     </header>
 
@@ -210,6 +211,34 @@
 
       </div>
     </div>
+
+  <!--Off canvas menu-->
+
+  <div class="uk-offcanvas-content">
+
+    <div id="offcanvas-nav" uk-offcanvas>
+        <div class="uk-offcanvas-bar">
+
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+              <ul class="uk-nav uk-nav-primary uk-margin-auto-vertical">
+                <li>
+                  <a href="search.html">Update Affiliates</a>
+                </li>
+                <li>
+                  <a href="settings.html" id="user-settings">My Account </a>
+                </li>
+                <li>
+                  <a href="#modal-center" uk-toggle>Tell a Friend</a>
+                </li>
+                <li>
+                  <a href="#">Logout</a>
+                </li>
+              </ul>
+        </div>
+    </div>
+</div>
+
 
 
     <!-- Scripts -->
