@@ -1,0 +1,75 @@
+[debug] [2018-03-30T17:42:00.229Z] ----------------------------------------------------------------------
+[debug] [2018-03-30T17:42:00.240Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ewhee\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-03-30T17:42:00.241Z] CLI Version:   3.17.7
+[debug] [2018-03-30T17:42:00.241Z] Platform:      win32
+[debug] [2018-03-30T17:42:00.241Z] Node Version:  v8.9.3
+[debug] [2018-03-30T17:42:00.244Z] Time:          Fri Mar 30 2018 11:42:00 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T17:42:00.244Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-30T17:42:00.320Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-30T17:42:00.323Z] > authorizing via signed-in user
+[debug] [2018-03-30T17:42:00.329Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-03-30T17:42:00.329Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/FvPfhERZbTrZbaQG99P2riPhXbEZMkiFHhopbzCo4qXW3qfb3LlcghrcBX2gshby',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Fri Mar 30 2018 11:42:00 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T17:42:00.763Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-30T17:42:00.787Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/outdoorrepo-e22c5  
+  
+ Fri Mar 30 2018 11:42:00 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T17:42:01.489Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-30T17:42:01.491Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/outdoorrepo-e22c5/tokens  
+  
+ Fri Mar 30 2018 11:42:01 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T17:42:01.947Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-30T17:42:01.950Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/outdoorrepo-e22c5  
+  
+ Fri Mar 30 2018 11:42:01 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T17:42:02.531Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\ewhee\Documents\GitHub\outdoorRepo'...
+[info] 
+[debug] [2018-03-30T17:42:02.542Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/565862631025/clients/_:getWebAppConfig  
+  
+ Fri Mar 30 2018 11:42:02 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T17:42:03.146Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[info] Shutting down...
+[debug] [2018-03-30T17:52:56.758Z] ----------------------------------------------------------------------
+[debug] [2018-03-30T17:52:56.762Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ewhee\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-03-30T17:52:56.763Z] CLI Version:   3.17.7
+[debug] [2018-03-30T17:52:56.763Z] Platform:      win32
+[debug] [2018-03-30T17:52:56.763Z] Node Version:  v8.9.3
+[debug] [2018-03-30T17:52:56.763Z] Time:          Fri Mar 30 2018 11:52:56 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T17:52:56.764Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-30T17:52:56.778Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-30T17:52:56.781Z] > authorizing via signed-in user
+[debug] [2018-03-30T17:52:56.783Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/outdoorrepo-e22c5  
+  
+ Fri Mar 30 2018 11:52:56 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T17:52:57.545Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-30T17:52:57.549Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/outdoorrepo-e22c5/tokens  
+  
+ Fri Mar 30 2018 11:52:57 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T17:52:58.083Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-30T17:52:58.083Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/outdoorrepo-e22c5  
+  
+ Fri Mar 30 2018 11:52:58 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T17:52:59.205Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\ewhee\Documents\GitHub\outdoorRepo'...
+[info] 
+[debug] [2018-03-30T17:52:59.221Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/565862631025/clients/_:getWebAppConfig  
+  
+ Fri Mar 30 2018 11:52:59 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T17:53:00.130Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[info] Shutting down...
