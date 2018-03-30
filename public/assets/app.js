@@ -392,7 +392,7 @@ function displayAffiliates(){
       var cabelasImg = "assets/images/cabelas.png";
       var marmotImg = "assets/images/marmot.jpg";
       var deuterImg = "assets/images/deuter.jpg";
-      var reiImg = "assets/images/rei.png";
+      var reiImg = "assets/images/REIimage.jpg";
       var mountainImg = "assets/images/mountain.jpg";
       var amazonImg = "assets/images/amazonlogo.svg";
       var backcountryImg = "assets/images/backcountry.png";
