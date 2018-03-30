@@ -425,7 +425,7 @@ function displayAffiliates(){
       }
 
       $("#no-affiliates").fadeOut();
-      $("#affiliate-grid").append("<div class='uk-width-1-5@l uk-margin-remove'><div class='uk-card uk-card-default uk-card-body'><h3>" + activeAffiliates[i] +
+      $("#affiliate-grid").append("<div class='uk-width-1-5'><div class='uk-card uk-card-default uk-card-body'><h3>" + activeAffiliates[i] +
       "</h3><img src='" + affiliateImage + "'></div></div>");
     }
   });
