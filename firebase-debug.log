@@ -73,3 +73,36 @@
 [info] +  hosting: Local server: http://localhost:5000
 
 [info] Shutting down...
+[debug] [2018-03-30T01:44:39.911Z] ----------------------------------------------------------------------
+[debug] [2018-03-30T01:44:39.913Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ewhee\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-03-30T01:44:39.914Z] CLI Version:   3.17.7
+[debug] [2018-03-30T01:44:39.914Z] Platform:      win32
+[debug] [2018-03-30T01:44:39.914Z] Node Version:  v8.9.3
+[debug] [2018-03-30T01:44:39.914Z] Time:          Thu Mar 29 2018 19:44:39 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T01:44:39.914Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-30T01:44:39.926Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-30T01:44:39.927Z] > authorizing via signed-in user
+[debug] [2018-03-30T01:44:39.930Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/outdoorrepo-e22c5  
+  
+ Thu Mar 29 2018 19:44:39 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T01:44:40.499Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-30T01:44:40.499Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/outdoorrepo-e22c5/tokens  
+  
+ Thu Mar 29 2018 19:44:40 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T01:44:41.030Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-30T01:44:41.032Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/outdoorrepo-e22c5  
+  
+ Thu Mar 29 2018 19:44:41 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T01:44:41.553Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\ewhee\Documents\GitHub\outdoorRepo'...
+[info] 
+[debug] [2018-03-30T01:44:41.566Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/565862631025/clients/_:getWebAppConfig  
+  
+ Thu Mar 29 2018 19:44:41 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-03-30T01:44:42.052Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[info] Shutting down...
