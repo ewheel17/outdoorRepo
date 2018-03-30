@@ -448,3 +448,9 @@ function setTheme(){
 
     });
 }
+
+$("#learnMore").click(function() {
+  $('html, body').animate({
+      scrollTop: $("#knowMore").offset().top
+  }, 800);
+});
