@@ -45,9 +45,9 @@
   <header>
 
 
-    <div class="uk-navbar-container" uk-navbar>
+    <nav class="uk-navbar-container" uk-navbar>
       <div class="uk-navbar-left">
-        <img src="assets/images/logo.png" class="uk-navbar-item uk-logo">
+        <a href="#" class="uk-navbar-item uk-logo"> <img class=".uk-preserve-width" src="assets/images/logo.png"></a>
       </div>
       <div class="uk-navbar-right">
         <div class="uk-navbar-item">
@@ -57,9 +57,7 @@
             <a class="uk-button uk-button-primary" href="login.html">Sign Up</a>
           </div>
       </div>
-    </div>
-
-    </div>
+    </nav>
 
   </header>
 
@@ -73,7 +71,7 @@
         <p>
           We are a small non-profit organization that has come up with a scalable way to fund charities through affiliate programming.
         </p>
-        <a class="uk-button uk-button-primary" href="">Learn More</a>
+        <a class="uk-button uk-button-primary" id="learnMore">Learn More</a>
       </div>
       <div>
         <img src="assets/images/003-skiing.png" alt="skiing graphic" />
@@ -168,18 +166,18 @@
     <div uk-parallax="opacity: 0,1; viewport: 0.5;" class="uk-text-center section-five">
       <h1>Like to know more?</h1>
       <h3>Just let us know how we can help and a friendly(ish) team-member will get back to you.</h3>
-      <form class="uk-padding-large">
+      <form class="uk-padding-large" action="https://formspree.io/outdoorrepo@gmail.com" method="POST">
         <fieldset class="uk-fieldset">
           <div class="uk-margin">
-            <input type="text" class="uk-input" id="name" placeholder="What's your name?">
+            <input type="text" class="uk-input" name="name" placeholder="What's your name?">
           </div>
           <div class="uk-margin">
-            <input type="email" class="uk-input" id="email" placeholder="Email address">
+            <input type="email" class="uk-input" name="_replyto" placeholder="Email address">
           </div>
           <div class="uk-margin">
-            <textarea class="uk-textarea" id="message" rows="5" placeholder="What can we help with?"></textarea>
+            <textarea class="uk-textarea" name="message" rows="5" placeholder="What can we help with?"></textarea>
           </div>
-          <button class="uk-button uk-button-primary">Submit</button>
+          <button class="uk-button uk-button-primary" value="Send">Submit</button>
         </fieldset>
       </form>
       <img src="assets/images/logo.png" alt="outdoorrepo logo" />
@@ -192,10 +190,10 @@
     <div class="bottom-nav uk-text-center uk-margin-remove">
       <ul>
         <li>
-          <a href="https://app.termly.io/document/terms-of-use-for-website/756933db-2d42-44fd-87bc-4b6b9870d7c2">Terms</a>
+          <a href="https://app.termly.io/document/terms-of-use-for-website/756933db-2d42-44fd-87bc-4b6b9870d7c2" target="_blank">Terms</a>
         </li>
         <li>
-          <a href="">Support</a>
+          <a href="https://drive.google.com/file/d/1ez6RFjhpI1JbhyXGhVcdkQgLedelahf-/view?usp=sharing" target="_blank">Privacy</a>
         </li>
         <!-- FAQ modal link -->
         <li>

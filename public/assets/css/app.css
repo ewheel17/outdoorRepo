@@ -29,7 +29,7 @@ p{
 
 .uk-navbar-container .uk-navbar-left img {
   margin-top: 25px;
-  height: 250px;
+  max-height: 250px;
 }
 
 .uk-navbar-right .uk-navbar-item a {
@@ -122,6 +122,7 @@ hr {
 
 .bottom-nav ul {
   list-style-type: none;
+  padding-left: 0px;
 }
 
 .bottom-nav li {
@@ -320,4 +321,19 @@ hr {
 #submit-affiliates{
   margin-top: 20px;
   padding: 10px 100px;
+}
+
+#navbar-toggle{
+  display: none;
+}
+
+
+@media (max-width: 1040px) {
+    #navbar-toggle {
+    display: inline;
+    }
+
+    #navbar-menu{
+      display: none;
+    }
 }

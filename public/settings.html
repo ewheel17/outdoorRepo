@@ -57,7 +57,10 @@
 <body>
   <header>
     <nav class="uk-navbar-container" uk-navbar>
-      <div class="uk-navbar-right">
+      <div class="uk-navbar-item uk-navbar-right" id="navbar-toggle">
+          <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#offcanvas-nav" uk-toggle></a>
+      </div>
+      <div class="uk-navbar-right" id="navbar-menu">
         <div class="uk-navbar-item">
           <a class="uk-button uk-button-default" href="dashboard.html" uk-toggle>Back to Dashboard</a>
         </div>
@@ -124,10 +127,10 @@
     <div class="bottom-nav uk-text-center uk-margin-remove">
       <ul>
         <li>
-          <a href="https://app.termly.io/document/terms-of-use-for-website/756933db-2d42-44fd-87bc-4b6b9870d7c2">Terms</a>
+          <a href="https://app.termly.io/document/terms-of-use-for-website/756933db-2d42-44fd-87bc-4b6b9870d7c2" target="_blank">Terms</a>
         </li>
         <li>
-          <a href="">Support</a>
+          <a href="https://drive.google.com/file/d/1ez6RFjhpI1JbhyXGhVcdkQgLedelahf-/view?usp=sharing" target="_blank">Privacy</a>
         </li>
         <!-- FAQ modal link -->
         <li>
@@ -322,6 +325,28 @@
       </div>
     </div>
 
+    <!--Off canvas menu-->
+
+    <div class="uk-offcanvas-content">
+
+      <div id="offcanvas-nav" uk-offcanvas>
+          <div class="uk-offcanvas-bar">
+
+              <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                <ul class="uk-nav uk-nav-primary uk-margin-auto-vertical">
+
+                  <li>
+                    <a href="dashboard.html">Back to Dashboard</a>
+                  </li>
+                  <li>
+                    <a href="#">Logout</a>
+                  </li>
+                </ul>
+          </div>
+      </div>
+  </div>
+
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -369,4 +394,4 @@
 
 </body>
 
-</html>i
+</html>

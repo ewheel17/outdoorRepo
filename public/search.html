@@ -40,9 +40,12 @@
     <header>
       <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-left">
-          <img src="assets/images/logo.png" class="uk-navbar-item uk-logo">
+          <a href="#" class="uk-navbar-item uk-logo"> <img class=".uk-preserve-width" src="assets/images/logo.png"></a>
         </div>
-        <div class="uk-navbar-right">
+        <div class="uk-navbar-item uk-navbar-right" id="navbar-toggle">
+            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#offcanvas-nav" uk-toggle></a>
+        </div>
+        <div class="uk-navbar-right" id="navbar-menu">
           <div class="uk-navbar-item">
             <a class="uk-button uk-button-default" href="dashboard.html" id="user-settings">Back to Dashboard</a>
           </div>
@@ -223,7 +226,26 @@
                 </div>
     </div>
 
+  <!--Off Canvas Nav -->
+    <div class="uk-offcanvas-content">
 
+      <div id="offcanvas-nav" uk-offcanvas>
+          <div class="uk-offcanvas-bar">
+
+              <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                <ul class="uk-nav uk-nav-primary uk-margin-auto-vertical">
+
+                  <li>
+                    <a href="dashboard.html">Back to Dashboard</a>
+                  </li>
+                  <li>
+                    <a href="#">Logout</a>
+                  </li>
+                </ul>
+          </div>
+      </div>
+  </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.0/dist/typeit.min.js"></script>
