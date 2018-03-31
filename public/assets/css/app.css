@@ -142,6 +142,17 @@ hr {
   text-decoration: none;
 }
 
+#affiliate-grid a {
+  color: #373737;
+  text-decoration: none;
+}
+
+#affiliate-grid a h3:hover {
+  color: #3ddb93;
+  transition-duration: 0.3s;
+  text-decoration: none;
+}
+
 /* Settings */
 
 .settings-one {
